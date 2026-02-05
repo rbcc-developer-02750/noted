@@ -1,0 +1,19 @@
+.template-build-your-book #MainContent {
+    margin: 0 0 125px;
+}
+
+.template-build-your-book .list-menu a.header__menu-item {
+    color: #000 !important;
+}
+
+.template-build-your-book .header__icon.header__icon--cart {
+    color: #000 !important;
+}
+
+.template-build-your-book sticky-header.header-wrapper--border-bottom {
+    border-bottom: 1px solid #000 !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    display: flex !important;
+}

@@ -1,0 +1,82 @@
+.corporate-form {
+  max-width: 100%;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.corporate-form .img_section {
+  width: 50%;
+  max-height: 1275px;
+  overflow: hidden;
+  margin-bottom: -18px;
+}
+
+.corporate-form .img_section img {
+  width: 100%;
+}
+
+.corporate-form .shopify-app-block {
+  width: 50%;
+  padding-left: 137px;
+  padding-right: 216px;
+}
+
+.corporate-form ._inline_stahb_47 ._formContainer_stahb_30 {
+  max-width: 100% !important;
+}
+
+.corporate-form h2 {
+  color: #1E1E1E;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; /* 113.636% */
+}
+
+.corporate-form {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1800px) {
+  .corporate-form .shopify-app-block {
+    max-width: 454px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .corporate-form {
+    flex-direction: column;
+  }
+
+  .corporate-form .img_section {
+    max-width: 100%;
+    width: 100%;
+    height: 450px;
+    margin-bottom: 20px;
+  }
+  
+  .corporate-form .img_section img {
+    object-position: center;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .corporate-form .shopify-app-block {
+    margin-bottom: 50px;
+    max-width: 454px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .corporate-form .shopify-app-block {
+    max-width: calc(100% - 40px);
+  }
+}

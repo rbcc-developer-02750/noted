@@ -1,0 +1,757 @@
+{%- liquid
+  assign startDateArray = startDate | split: '-'
+  assign startDateYear = startDateArray[0]
+  assign startDateMonth = startDateArray[1]
+  assign startDateDay = startDateArray[2]
+  assign pageIndex = page | minus: 1
+-%}
+{%- if template == 'yearly-1' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_Y1 {
+        padding: 70px 60px 50px;
+        height: -webkit-fill-available;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_Y1 {
+        height: 100%;
+        padding: 70px 30px 30px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_Y1 .row-text-field {
+        height: 130px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 th,
+      .template-count-{{ templateCount }} .book-template_Y1 td {
+        border: 1px solid #d1d1d1;
+        padding: 8px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #6a6a6a;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 .cell-spacer,
+      .template-count-{{ templateCount }} .book-template_Y1 .cell-year,
+      .template-count-{{ templateCount }} .book-template_Y1 .row-year td {
+        border: none;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 td {
+        width: 33.3%
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 .row-year,
+      .template-count-{{ templateCount }} .book-template_Y1 .row-month {
+        height: 36px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 .row-month {
+        text-align: center;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 table:nth-child(2) {
+        margin-top: 100px;
+      }
+    {%- endstyle -%}
+    <div class="book-template book-template_Y1 is-portrait">
+      <table>
+        <tr class="row-year">
+          <td colspan="3">
+            {{- startDateYear | plus: pageIndex -}}
+          </td>  
+        </tr>
+        <tr class="row-month">
+          <td>January</td>
+          <td>February</td>
+          <td>March</td>
+        </tr>
+        <tr class="row-text-field">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="row-month">
+          <td>April</td>
+          <td>May</td>
+          <td>June</td>
+        </tr>
+        <tr class="row-text-field">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    <div class="book-template book-template_Y1 is-portrait">
+      <table>
+        <tr class="row-year">
+          <td colspan="3">
+            {{- startDateYear | plus: pageIndex -}}
+          </td>
+        </tr>
+        <tr class="row-month">
+          <td>July</td>
+          <td>August</td>
+          <td>September</td>
+        </tr>
+        <tr class="row-text-field">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="row-month">
+          <td>October</td>
+          <td>November</td>
+          <td>December</td>
+        </tr>
+        <tr class="row-text-field">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+{%- elsif template == 'yearly-2' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_Y2 {
+        padding: 70px 60px 50px;
+        height: -webkit-fill-available;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_Y2 {
+        padding: 60px 30px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .table-wrapper {
+        border: 1px solid #d1d1d1;
+        padding: 10px 20px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-year td {
+        border-bottom: 1px solid #d1d1d1;
+        font-size: 16px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 th,
+      .template-count-{{ templateCount }} .book-template_Y3 td {
+        padding: 8px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #6a6a6a;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month td {
+        width: 50%;
+        text-align: left;
+        vertical-align: baseline;
+        padding: 20px 0;
+        height: 100px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_Y2 .row-month td {
+        height: 60px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month td div {
+        width: 100%;
+        height: 100%;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month td:first-child div {
+        border-right: 1px solid #d1d1d1;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .cell-spacer,
+      .template-count-{{ templateCount }} .book-template_Y2 .cell-year {
+        border: none;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 td {
+        width: 50%;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #6a6a6a;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-year {
+        height: 36px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month {
+        text-align: center;
+        border-bottom: 1px solid #d1d1d1;
+        display: flex;
+        width: 100%;
+        gap: 20px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month:last-child {
+        border-bottom: none;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 table:nth-child(2) {
+        margin-top: 100px;
+      }
+    {%- endstyle -%}
+    <div class="book-template book-template_Y2 is-portrait">
+      <div class="table-wrapper">
+        <table>
+          <tr class="row-year">
+            <td colspan="3">
+              {{- startDateYear | plus: pageIndex -}}
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>January</div>
+            </td>
+            <td>
+              <div>February</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>March</div>
+            </td>
+            <td>
+              <div>April</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>May</div>
+            </td>
+            <td>
+              <div>June</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>July</div>
+            </td>
+            <td>
+              <div>August</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>September</div>
+            </td>
+            <td>
+              <div>October</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>November</div>
+            </td>
+            <td>
+              <div>December</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+{%- elsif template == 'yearly-3' -%}
+  {%- liquid
+    assign year = startDateYear | plus: pageIndex
+  -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_Y3 {
+        padding: 70px 40px 40px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_Y3 {
+        padding: 40px 30px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y3 .year-title {
+        font-size: 20px;
+        margin: 0 0 16px 0;
+        border-bottom: 1px solid #d1d1d1;
+        padding-bottom: 8px;
+        color: #6a6a6a;
+        letter-spacing: 1px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y3 .months-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+      }
+      .template-count-{{ templateCount }} .book-template_Y3 .month {
+        padding: 12px 6px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y3 .month-name {
+        text-align: center;
+        font-size: 13px;
+        color: #6a6a6a;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y3 table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .template-count-{{ templateCount }} .book-template_Y3 th,
+      .template-count-{{ templateCount }} .book-template_Y3 td {
+        font-size: 9px;
+        color: #6a6a6a;
+        text-align: center;
+        width: calc(100% / 7);
+        padding: 2px 0;
+      }
+      .template-count-{{ templateCount }} .book-template_Y3 th {
+        font-size: 5px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y3 thead th {
+        border-bottom: 1px solid #d1d1d1;
+        padding-bottom: 4px;
+      }
+    {%- endstyle -%}
+    <div class="book-template book-template_Y3 is-portrait">
+      <div class="year-title">{{- year -}}</div>
+      <div class="months-grid">
+        {%- for m in (1..12) -%}
+          {%- assign first_day_date = year | append: '-' | append: m | append: '-01' -%}
+          {%- assign month_name = first_day_date | date: '%B' -%}
+          {%- assign first_weekday = first_day_date | date: '%w' | plus: 0 -%}
+          {%- assign next_month = m | plus: 1 -%}
+          {%- assign next_year = year -%}
+          {%- if next_month > 12 -%}
+            {%- assign next_month = next_month | modulo: 12 -%}
+            {%- if next_month == 0 -%}
+              {%- assign next_month = 12 -%}
+            {%- endif -%}
+            {%- assign next_year = next_year | plus: 1 -%}
+          {%- endif -%}
+          {%- assign next_first = next_year | append: '-' | append: next_month | append: '-01' -%}
+          {%- assign last_day = next_first | date: '%s' | minus: 86400 | date: '%d' | plus: 0 -%}
+          <div class="month">
+            <div class="month-name">{{- month_name -}}</div>
+            <table>
+              <thead>
+                <tr>
+                  <th>SUN</th>
+                  <th>MON</th>
+                  <th>TUE</th>
+                  <th>WED</th>
+                  <th>THU</th>
+                  <th>FRI</th>
+                  <th>SAT</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%- assign day = 1 -%}
+                {%- for r in (1..6) -%}
+                  <tr>
+                    {%- for c in (0..6) -%}
+                      {%- assign cell_index = c | plus: 0 -%}
+                      {%- if r == 1 and cell_index < first_weekday -%}
+                        <td></td>
+                      {%- elsif day <= last_day -%}
+                        <td>{{- day -}}</td>
+                        {%- assign day = day | plus: 1 -%}
+                      {%- else -%}
+                        <td></td>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </tr>
+                  {%- if day > last_day -%}
+                    {%- break -%}
+                  {%- endif -%}
+                {%- endfor -%}
+              </tbody>
+            </table>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- elsif template == 'monthly-1' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- liquid
+      # First page of monthly-1: compute absolute month index to avoid drift
+      assign start_year_num = startDateYear | plus: 0
+      assign start_month_num = startDateMonth | plus: 0
+      assign absolute_index = start_year_num | times: 12 | plus: start_month_num | minus: 1 | plus: pageIndex
+      assign year = absolute_index | divided_by: 12
+      assign adjusted_month_index = absolute_index | modulo: 12
+      assign month_number = adjusted_month_index | plus: 1
+
+      assign month_padded = month_number
+      if month_number < 10
+        assign month_padded = '0' | append: month_number
+      endif
+      assign header_date = year | append: '-' | append: month_padded | append: '-01'
+      assign month_name = header_date | date: '%B'
+      assign current_year = header_date | date: '%Y'
+
+      # Last day: based on next month's first day minus one
+      assign nm = month_number | plus: 1
+      assign ny = year
+      if nm > 12
+        assign nm = nm | modulo: 12
+        if nm == 0
+          assign nm = 12
+        endif
+        assign ny = ny | plus: 1
+      endif
+      assign nm_padded = nm
+      if nm < 10
+        assign nm_padded = '0' | append: nm
+      endif
+      assign next_first = ny | append: '-' | append: nm_padded | append: '-01'
+      assign last_day = next_first | date: '%s' | minus: 86400 | date: '%d' | plus: 0
+    -%}
+
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_M1 {
+        padding: 70px 60px 50px;
+        height: -webkit-fill-available;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_M1 {
+        padding: 30px 18px;
+      }
+      .template-count-{{ templateCount }} .book-template_M1 th,
+      .template-count-{{ templateCount }} .book-template_M1 td {
+        border: 1px solid #d1d1d1;
+        padding: 8px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #6a6a6a;
+        vertical-align: top;
+      }
+      .template-count-{{ templateCount }} .book-template_M1 .cell-spacer,
+      .template-count-{{ templateCount }} .book-template_M1 .cell-year,
+      .template-count-{{ templateCount }} .book-template_M1 .row-year td {
+        border: none;
+      }
+
+      .template-count-{{ templateCount }} .book-template_M1 .row-year,
+      .template-count-{{ templateCount }} .book-template_M1 .row-month {
+        height: 36px;
+      }
+      .template-count-{{ templateCount }} .book-template_M1 .row-month {
+        text-align: center;
+      }
+      .template-count-{{ templateCount }} .book-template_M1.has-additional-row .row-day,
+      .template-count-{{ templateCount }} .book-template_M1 .row-day {
+        height: 80px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_M1.has-additional-row .row-day {
+        height: 70px;
+      }
+    {%- endstyle -%}
+    
+    <div class="book-template book-template_M1 is-portrait {% if last_day >= 31 %}has-additional-row{% endif %}">
+      <table>
+        <tr class="row-month">
+          <td colspan="3">
+            {{- month_name }} {{ current_year -}}
+          </td>
+        </tr>
+        <tr class="row-day">
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr class="row-day">
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+        <tr class="row-day">
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+        </tr>
+        <tr class="row-day">
+          <td>19</td>
+          <td>20</td>
+          <td>21</td>
+        </tr>
+        <tr class="row-day">
+          <td>25</td>
+          <td>26</td>
+          <td>27</td>
+        </tr>
+        {%- if last_day >= 31 -%}
+          <tr class="row-day">
+            <td>31</td>
+            <td></td>
+            <td></td>
+          </tr>
+        {%- endif-%}
+      </table>
+    </div>
+  </div>
+
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- liquid
+      # Second page of monthly-1: same month as first page, use absolute index
+      assign start_year_num = startDateYear | plus: 0
+      assign start_month_num = startDateMonth | plus: 0
+      assign absolute_index = start_year_num | times: 12 | plus: start_month_num | minus: 1 | plus: pageIndex
+      assign year = absolute_index | divided_by: 12
+      assign adjusted_month_index = absolute_index | modulo: 12
+      assign month_number = adjusted_month_index | plus: 1
+
+      assign month_padded = month_number
+      if month_number < 10
+        assign month_padded = '0' | append: month_number
+      endif
+      assign header_date = year | append: '-' | append: month_padded | append: '-01'
+      assign month_name = header_date | date: '%B'
+      assign current_year = header_date | date: '%Y'
+
+      assign nm = month_number | plus: 1
+      assign ny = year
+      if nm > 12
+        assign nm = nm | modulo: 12
+        if nm == 0
+          assign nm = 12
+        endif
+        assign ny = ny | plus: 1
+      endif
+      assign nm_padded = nm
+      if nm < 10
+        assign nm_padded = '0' | append: nm
+      endif
+      assign next_first = ny | append: '-' | append: nm_padded | append: '-01'
+      assign last_day = next_first | date: '%s' | minus: 86400 | date: '%d' | plus: 0
+    -%}
+    
+    <div class="book-template book-template_M1 is-portrait {% if last_day >= 31 %}has-additional-row{% endif %}">
+      <table>
+        <tr class="row-month">
+          <td colspan="3">
+            {{- month_name }} {{ current_year -}}
+          </td>
+        </tr>
+        <tr class="row-day">
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr class="row-day">
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+        </tr>
+        <tr class="row-day">
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+        </tr>
+        <tr class="row-day">
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+        </tr>
+        <tr class="row-day">
+          <td>{%- if last_day >= 28-%}28{%- endif-%}</td>
+          <td>{%- if last_day >= 29-%}29{%- endif-%}</td>
+          <td>{%- if last_day >= 30-%}30{%- endif-%}</td>
+        </tr>
+        {%- if last_day >= 31 -%}
+          <tr class="row-day">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        {%- endif-%}
+      </table>
+    </div>
+  </div>
+{%- elsif template == 'monthly-2' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- liquid
+      # Use absolute month index to avoid drift and ensure correct year rollover
+      assign start_year_num = startDateYear | plus: 0
+      assign start_month_num = startDateMonth | plus: 0
+      assign absolute_index = start_year_num | times: 12 | plus: start_month_num | minus: 1 | plus: pageIndex
+      assign year = absolute_index | divided_by: 12
+      assign adjusted_month_index = absolute_index | modulo: 12
+      assign month_number = adjusted_month_index | plus: 1
+
+      assign month_padded = month_number
+      if month_number < 10
+        assign month_padded = '0' | append: month_number
+      endif
+      assign header_date = year | append: '-' | append: month_padded | append: '-01'
+      assign month_name = header_date | date: '%B'
+
+      # Compute last day via next month first day - 1
+      assign nm = month_number | plus: 1
+      assign ny = year
+      if nm > 12
+        assign nm = nm | modulo: 12
+        if nm == 0
+          assign nm = 12
+        endif
+        assign ny = ny | plus: 1
+      endif
+      assign nm_padded = nm
+      if nm < 10
+        assign nm_padded = '0' | append: nm
+      endif
+      assign next_first = ny | append: '-' | append: nm_padded | append: '-01'
+      assign last_day = next_first | date: '%s' | minus: 86400 | date: '%d' | plus: 0
+    -%}
+
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_M2 {
+        padding: 60px 40px 40px;
+        height: -webkit-fill-available;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_M2 {
+        padding: 40px 30px;
+      }
+      .template-count-{{ templateCount }} .book-template_M2 .month-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        color: #6a6a6a;
+        letter-spacing: 1px;
+        font-size: 12px;
+      }
+      .template-count-{{ templateCount }} .book-template_M2 .month-header .label { min-width: 70px; }
+      .template-count-{{ templateCount }} .book-template_M2 .month-header .line { flex: 1; border-bottom: 1px solid #d1d1d1; height: 1px; }
+
+      .template-count-{{ templateCount }} .book-template_M2 .day-line {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        height: 26px;
+      }
+      .template-count-{{ templateCount }} .book-template_M2 .day-line .num { width: 20px; font-size: 11px; color: #6a6a6a; }
+      .template-count-{{ templateCount }} .book-template_M2 .day-line .rule { flex: 1; border-bottom: 1px solid #d1d1d1; height: 1px; }
+    {%- endstyle -%}
+
+    <div class="book-template book-template_M2 is-portrait">
+      <div class="month-header">
+        <div class="label">MONTH: {{- month_name | upcase -}} {{- ' ' -}}{{- year -}}</div>
+      </div>
+      {%- for d in (1..last_day) -%}
+        <div class="day-line">
+          <div class="num">{{- d -}}</div>
+          <div class="rule"></div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_M2_2 {
+        padding: 60px 40px 40px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_M2_2 {
+        padding: 40px 30px;
+      }
+      .template-count-{{ templateCount }} .book-template_M2_2 .columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .template-count-{{ templateCount }} .book-template_M2_2 .col-title {
+        color: #6a6a6a;
+        font-size: 12px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+      .template-count-{{ templateCount }} .book-template_M2_2 .todo-line,
+      .template-count-{{ templateCount }} .book-template_M2_2 .note-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 24px;
+      }
+      .template-count-{{ templateCount }} .book-template_M2_2 .checkbox {
+        width: 12px; height: 12px; border: 1px solid #bdbdbd;
+      }
+      .template-count-{{ templateCount }} .book-template_M2_2 .rule { flex: 1; border-bottom: 1px solid #d1d1d1; height: 1px; }
+    {%- endstyle -%}
+
+    <div class="book-template book-template_M2_2 is-portrait">
+      <div class="columns">
+        <div>
+          <div class="col-title">TO DO:</div>
+          {%- for i in (1..18) -%}
+            <div class="todo-line"><div class="checkbox"></div><div class="rule"></div></div>
+          {%- endfor -%}
+        </div>
+        <div>
+          <div class="col-title">IMPORTANT:</div>
+          {%- for i in (1..18) -%}
+            <div class="note-line"><div class="rule"></div></div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- elsif template == 'monthly-3' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- liquid
+      # Use absolute month index to avoid drift and ensure correct year rollover
+      assign start_year_num = startDateYear | plus: 0
+      assign start_month_num = startDateMonth | plus: 0
+      assign absolute_index = start_year_num | times: 12 | plus: start_month_num | minus: 1 | plus: pageIndex
+      assign year = absolute_index | divided_by: 12
+      assign adjusted_month_index = absolute_index | modulo: 12
+      assign month_number = adjusted_month_index | plus: 1
+
+      assign month_padded = month_number
+      if month_number < 10
+        assign month_padded = '0' | append: month_number
+      endif
+      assign header_date = year | append: '-' | append: month_padded | append: '-01'
+      assign month_name = header_date | date: '%B'
+
+      # Compute last day via next month first day - 1
+      assign nm = month_number | plus: 1
+      assign ny = year
+      if nm > 12
+        assign nm = nm | modulo: 12
+        if nm == 0
+          assign nm = 12
+        endif
+        assign ny = ny | plus: 1
+      endif
+      assign nm_padded = nm
+      if nm < 10
+        assign nm_padded = '0' | append: nm
+      endif
+      assign next_first = ny | append: '-' | append: nm_padded | append: '-01'
+      assign last_day = next_first | date: '%s' | minus: 86400 | date: '%d' | plus: 0
+    -%}
+
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_M3 {
+        padding: 60px 40px 40px;
+        height: -webkit-fill-available;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_M3 {
+        padding: 40px 30px;
+      }
+      .template-count-{{ templateCount }} .book-template_M3 .month-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        color: #6a6a6a;
+        letter-spacing: 1px;
+        font-size: 12px;
+      }
+      .template-count-{{ templateCount }} .book-template_M3 .month-header .label { min-width: 70px; }
+      .template-count-{{ templateCount }} .book-template_M3 .month-header .line { flex: 1; border-bottom: 1px solid #d1d1d1; height: 1px; }
+
+      .template-count-{{ templateCount }} .book-template_M3 .day-line {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        height: 26px;
+      }
+      .template-count-{{ templateCount }} .book-template_M3 .day-line .num { width: 20px; font-size: 11px; color: #6a6a6a; }
+      .template-count-{{ templateCount }} .book-template_M3 .day-line .rule { flex: 1; border-bottom: 1px solid #d1d1d1; height: 1px; }
+    {%- endstyle -%}
+
+    <div class="book-template book-template_M3 is-portrait">
+      <div class="month-header">
+        <div class="label">MONTH: {{- month_name | upcase -}} {{- ' ' -}}{{- year -}}</div>
+      </div>
+      {%- for d in (1..last_day) -%}
+        <div class="day-line">
+          <div class="num">{{- d -}}</div>
+          <div class="rule"></div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+{%- endif -%}

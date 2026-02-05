@@ -1,0 +1,342 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="tabbed-content-section section-{{ section.id }}-padding {{ section.settings.custom_class }}">
+  <div class="tabbed-button-wrapper">
+    {% for block in section.blocks %}
+      <button
+        class="tabbed-button tab-button-{{ block.id }} {% if forloop.first %}active{% endif %}"
+        onclick="openTab('{{ block.id }}')"
+      >
+        {{ block.settings.button_label }}
+      </button>
+    {% endfor %}
+  </div>
+  <div class="tabbed-content-wrapper">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'build_your_book' -%}
+          {%- assign product_form_id = 'product-form-' | append: section.id -%}
+          <div class="tab-content tabbed-content-{{ block.id }} {% if forloop.first %}active{% endif %}">
+            {% render 'build-your-book',
+              product: block.settings.product,
+              details: block.settings.details,
+              block: block,
+              form_id: product_form_id
+            %}
+          </div>
+        {%- when 'how_it_works_five_steps' -%}
+          <div class="tab-content tabbed-content-{{ block.id }} {% if forloop.first %}active{% endif %}">
+            {% render 'how-it-works-five-steps', block: block %}
+          </div>
+        {%- when 'pre_made_books' -%}
+          <div class="tab-content tabbed-content-{{ block.id }} {% if forloop.first %}active{% endif %}">
+            {% render 'pre-made-books', block: block %}
+          </div>
+        {%- when 'faq' -%}
+          <div class="tab-content tabbed-content-{{ block.id }} {% if forloop.first %}active{% endif %}">
+            {% render 'faq', block: block %}
+          </div>
+        {%- when 'examples' -%}
+          <div class="tab-content tabbed-content-{{ block.id }} {% if forloop.first %}active{% endif %}">
+            {% render 'examples', block: block %}
+            <div class="xo-gallery" data-id="1"></div>
+          </div>
+        {%- when 'product' -%}
+          <div class="tab-content tabbed-content-{{ block.id }} {% if forloop.first %}active{% endif %}">
+            {% render 'tab-product', block: block %}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+<script>
+  function openTab(id) {
+    const btns = document.querySelectorAll('.tabbed-button');
+    const contents = document.querySelectorAll('.tab-content');
+    const activeBtn = document.querySelector('.tab-button-'+id);
+    const activeContent = document.querySelector('.tabbed-content-'+id);
+
+    btns.forEach((btn, index) => {
+        btn.classList.remove('active')
+    });
+
+    contents.forEach((content, index) => {
+        content.classList.remove('active')
+    });
+
+    activeBtn.classList.add('active')
+    activeContent.classList.add('active')
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Tabbed Content",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom Class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "build_your_book",
+      "name": "Build Your Book",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Tab Button Label"
+        },
+        {
+          "type": "product",
+          "label": "Select Product",
+          "id": "product"
+        },
+        {
+          "type": "textarea",
+          "id": "details",
+          "label": "Additional Details"
+        },
+        {
+          "type": "select",
+          "id": "picker_type",
+          "options": [
+            {
+              "value": "dropdown",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+            },
+            {
+              "value": "button",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+            }
+          ],
+          "default": "button",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+        },
+        {
+          "id": "swatch_shape",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.label",
+          "type": "select",
+          "info": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.info",
+          "options": [
+            {
+              "value": "circle",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__1.label"
+            },
+            {
+              "value": "square",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__2.label"
+            },
+            {
+              "value": "none",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__3.label"
+            }
+          ],
+          "default": "circle"
+        }
+      ]
+    },
+    {
+      "type": "how_it_works_five_steps",
+      "name": "How it Works (1-5 Steps)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Tab Button Label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "Button label"
+        },
+        {
+          "type": "textarea",
+          "id": "step_one",
+          "label": "Step 1"
+        },
+        {
+          "type": "textarea",
+          "id": "step_two",
+          "label": "Step 2"
+        },
+        {
+          "type": "textarea",
+          "id": "step_three",
+          "label": "Step 3"
+        },
+        {
+          "type": "textarea",
+          "id": "step_four",
+          "label": "Step 4"
+        },
+        {
+          "type": "textarea",
+          "id": "step_five",
+          "label": "Step 5"
+        }
+      ]
+    },
+    {
+      "type": "pre_made_books",
+      "name": "Pre-Made Books",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Tab Button Label"
+        },
+        {
+          "type": "collection",
+          "label": "Select Collection",
+          "id": "collection"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Tab Button Label"
+        }
+      ]
+    },
+    {
+      "type": "examples",
+      "name": "Examples",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Tab Button Label"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_one",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_two",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_three",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_four",
+          "label": "Image 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_five",
+          "label": "Image 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_six",
+          "label": "Image 6"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "product_img",
+          "label": "Upload Product Image"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Tab Button Label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Tab Content"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link Label"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabbed Content",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

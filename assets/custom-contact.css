@@ -1,0 +1,95 @@
+.shopify-section .contact.contact-v-two {
+  padding-top: 125px;
+  padding-bottom: 104px;
+  max-width: 807px;
+  width: 100%;
+}
+
+.shopify-section .contact.contact-v-two .input_field {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopify-section .contact.contact-v-two .input_field textarea {
+  padding-left: 0px;
+  padding-right: 0px;
+  min-height: unset;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.shopify-section .contact.contact-v-two .input_field input::placeholder,
+.shopify-section .contact.contact-v-two .input_field textarea::placeholder {
+  color: #D6D6D6;
+}
+
+.shopify-section .contact.contact-v-two .input_field input:focus-visible,
+.shopify-section .contact.contact-v-two .input_field textarea:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.shopify-section .contact.contact-v-two #ContactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.shopify-section .contact.contact-v-two #ContactForm .contact__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 43px;
+}
+
+.shopify-section .contact.contact-v-two #ContactForm .contact__button button:before,
+.shopify-section .contact.contact-v-two #ContactForm .contact__button button:after {
+  display: none;
+}
+
+.shopify-section .contact.contact-v-two #ContactForm .contact__button button {
+  transition: all 0.3s ease;
+}
+
+.shopify-section .contact.contact-v-two #ContactForm .contact__button button:hover {
+  background: #F9E97A;
+}
+
+@media screen and (max-width: 1800px) {
+  .shopify-section .contact.contact-v-two {
+    padding: 95px 70px;
+  }
+
+  .shopify-section p.subtitle {
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+
+  .shopify-section .contact.contact-v-two #ContactForm .contact__button {
+    margin-top: 10px;
+  }
+
+  .shopify-section .contact.contact-v-two {}
+}
+
+@media screen and (max-width: 1280px) {
+  .shopify-section .contact.contact-v-two {
+    padding: 70px 40px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .shopify-section .contact.contact-v-two {
+    padding: 50px 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .shopify-section .contact.contact-v-two {
+    padding: 30px 20px;
+  }
+
+  .shopify-section .contact.contact-v-two #ContactForm .contact__button button {
+    margin-top: 0px;
+  }
+}

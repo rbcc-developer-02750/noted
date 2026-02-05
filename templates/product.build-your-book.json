@@ -1,0 +1,125 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "build_your_book_33cXfx": {
+      "type": "build-your-book",
+      "settings": {
+        "dates_text": "Pick a date that you would like your calendar to start. The end date of your book will be determined by how many additional pages you choose. Please keep in mind production and shipping time (add here)",
+        "notebook_cover_text": "All covers are printed in a 100# Matte cover with Matte Lamination and are perfect bound",
+        "calendar_type_text": "Start by choosing the calendar format that fits your lifestyle—whether it’s yearly, quarterly, monthly, weekly, or daily. Once selected, customize the design of your calendar segment to match your unique style and needs",
+        "calendar_design_text": "Select the design option that best suits your routine. Click on each image to enlarge it and view additional images of the layout.",
+        "todo_text": "These pages will go in between each calendar segment (ie. if you chose weekly, your additional pages will be printed in between each week). Additional pages are categorized into 3 sections - To Do Lists & meetings, Personal & Wellness, and Generic",
+        "personal_text": "These pages will go in between each calendar segment. Additional pages are categorized into 3 sections - To Do Lists & meetings, Personal & Wellness, and Generic",
+        "generic_text": "These pages will go in between each calendar segment. Additional pages are categorized into 3 sections - To Do Lists & meetings, Personal & Wellness, and Generic",
+        "review_heading": "Confirmation",
+        "review_text": "Take a moment to review your book to ensure everything looks correct. Once confirmed, you wont be able to make any more changes and we’ll proceed with printing!"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "build_your_book_33cXfx",
+    "main",
+    "related-products"
+  ]
+}

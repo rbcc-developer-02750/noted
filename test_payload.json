@@ -1,0 +1,99 @@
+{
+  "destination": {
+    "name": "hp.melprinting"
+  },
+  "orderData": {
+    "sourceOrderId": "6283629068437",
+    "customerName": "Noted",
+    "extraData": {},
+    "items": [
+      {
+        "description": "Book of one",
+        "shipmentIndex": 0,
+        "sourceItemId": "8805002444949",
+        "sku": "PBS-003_PB-LG1",
+        "dispatchAlert": "notes here?",
+        "quantity": 1,
+        "unitWeight": 10,
+        "barcode": null,
+        "extraData": {},
+        "components": [
+          {
+            "sourceComponentId": "BOOTEST-1-1755534245",
+            "code": "Cover",
+            "localFile": false,
+            "fetch": true,
+            "path": "https://notednotebooks.com/cdn/shop/files/Tan_20eec0d8-9f75-415b-bf0c-13df9124cf73.pdf?v=16984140279104773395",
+            "preflight": false,
+            "duplcate": null,
+            "attributes": {
+              "substrate": "Cover_12pt_C1S-Gloss_2600x2000",
+              "trimWidth": 7,
+              "trimHeight": 9
+            },
+            "extraData": null,
+            "duplicate": 1
+          },
+          {
+            "sourceComponentId": "BOOTEST-1-1755534245",
+            "code": "Inside",
+            "localFile": false,
+            "fetch": true,
+            "path": "https://pdfshift.s3.amazonaws.com/d/2/2025-09/8703bd13edb14a6183a3ddd0e065f2fe/BYB-file-6290700632213.pdf",
+            "preflight": false,
+            "duplcate": null,
+            "attributes": {
+              "substrate": "Text_70lb_Offset_2950x2081",
+              "trimWidth": 7,
+              "trimHeight": 9
+            },
+            "extraData": null,
+            "duplicate": 1
+          }
+        ]
+      }
+    ],
+    "shipments": [
+      {
+        "sourceShipmentId": "BOOTEST-1-1755534245",
+        "shipmentIndex": 0,
+        "shipByDate": null,
+        "slaDays": null,
+        "canShipEarly": true,
+        "shipTo": {
+          "name": "Dan Testing",
+          "companyName": "Mel Office",
+          "address1": "6000 Pardee",
+          "address2": "",
+          "address3": null,
+          "town": "Taylor",
+          "postcode": "48180",
+          "state": "MI",
+          "isoCountry": "US",
+          "country": "United States",
+          "email": "dan@melprinting.com",
+          "phone": "3139285440"
+        },
+        "returnAddress": {
+          "name": "Return Address",
+          "companyName": "Noted Notebooks",
+          "address1": "6000 Pardee",
+          "address2": "",
+          "address3": "",
+          "town": "Taylor",
+          "postcode": "48180",
+          "state": "MI",
+          "isoCountry": "US",
+          "country": "United States",
+          "email": null,
+          "phone": "3139285440"
+        },
+        "carrier": {
+          "alias": "notedFedex"
+        },
+        "attachments": null
+      }
+    ],
+    "amount": 1
+  }
+}

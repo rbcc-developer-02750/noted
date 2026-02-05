@@ -1,0 +1,1786 @@
+<!-- =======================
+     jQuery & Swiper JS/CSS
+     ======================= -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+        crossorigin="anonymous"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- =======================
+     STYLES
+     ======================= -->
+<style>
+/* ======================================
+   BASE STYLES
+   ====================================== */
+.slider {
+    position: relative;
+    width: 80%;
+    min-height: 90vh;
+    margin: 0;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.slide h2 {
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: 110%;
+}  
+.slide h2 + p {
+    margin-top: 0;
+    margin-bottom: 30px;
+    max-width: 1140px;
+}
+#page-counter {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+.controls {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    row-gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 9;
+    bottom: 0;
+    background: #fff;
+    padding: 5px;
+    border-top: 1px solid;
+    
+}
+.controls button {
+    font-family: Poppins;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #000;
+    color: white;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    min-width: 200px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+button#prev {
+    background: transparent;
+    color: #000;
+}
+.controls button:hover {
+    background: transparent;
+    color: #000;
+}
+button#prev:hover {
+    background: #000;
+    color: #fff;
+}
+button#preview-book {
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: none;
+    color: #7E7E7E;
+    text-decoration: underline;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding:0;
+}
+.form-group {
+    margin: 10px 0;
+    width: 100%;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+.date-fields label {
+    color: #7E7E7E;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+input[type="date"] {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Poppins';
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 4px;
+    padding: 17px 25px;
+}
+.swiper-container {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+  /*
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.swiper-slide img {
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+    max-width: 340px;
+    max-height: 300px;
+    height: 100%;
+    object-fit: contain;
+}
+
+#weekly-swiper .swiper-slide img {
+  max-width: 100%;
+}
+
+.swiper-slide img {
+    border: 3px solid transparent;
+    padding: 5px;
+}
+
+.swiper-slide img.selected {
+    border-color: #000;
+}
+.slide.with-slide {
+    position: relative;
+}
+.swiper-button-next, 
+.swiper-button-prev {
+    color: #7E7E7E;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 24px;
+}
+
+.calendar-btn {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    font-family: 'Poppins';
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 70px;
+    width: 170px;
+    line-height: 1;
+    font-size: 24px;
+}
+.calendar-btn.selected {
+    background-color: #000;
+    color: white;
+    border-color: #000;
+}
+.calendar-btn.selected:hover {
+    background-color: #000;
+    color: #fff;
+}
+.calendar-btn:hover {
+    background-color: #ddd;
+}
+.calendar-swiper-container {
+    width: 100%;
+    padding: 20px;
+}
+.calendar-swiper-slide img.selected {
+    border: 2px solid #000;
+}
+.inbetween-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inbetween-slide img {
+    margin-bottom: 10px;
+    border-color: transparent;
+}
+.page-count {
+    width: 60px;
+    text-align: center;
+}
+.page-count:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.date-fields {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+/* NOTEBOOK COVER SLIDE RULES */
+.notebook-cover-slide .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.slider .swiper-button-prev,
+.slider .swiper-button-next {
+    background: black;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.slider .swiper-button-prev:after, .slider .swiper-button-next:after {
+  font-size: 20px;
+  color: white;
+}
+.with-slide .swiper-button-prev {
+  left: -15px;
+  padding-right: 3px;
+}
+.with-slide .swiper-button-next {
+  right: -15px;
+  padding-left: 3px;
+}
+.notebook-cover-slide .swiper-slide img {
+    width: 250px;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+    object-fit: cover;
+}
+/* QUANTITY WRAPPER (IN-BETWEEN SLIDES) */
+.quantity-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+.quantity-wrapper button {
+    background: #fff;
+    font-family: 'Poppins';
+    border-radius: 4px;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 36px;
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quantity-wrapper input {
+    min-width: 40px;
+    text-align: center;
+    font-size: 24px;
+    border: 0;
+    font-family: 'Poppins';
+}
+.quantity-wrapper input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.quantity-wrapper input[type="number"]::-webkit-inner-spin-button,
+.quantity-wrapper input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* REVIEW SLIDE */
+.slide.review-slide {
+    flex-direction: row;
+    gap: 100px;
+}
+.review-slide .swiper-container {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.review-slide .details {
+    width: 50%;
+    text-align: left;
+}
+.review-slide .swiper-slide img {
+    width: 400px;
+    border-color: transparent;
+}
+.review-slide .swiper-wrapper {
+    align-items: center;
+}
+.review-slide ul {
+    padding: 0;
+    list-style: none;
+}
+.details h2 {
+    margin-bottom: 20px;
+}
+.details li {
+    font-size: 20px;
+    color: #000;
+    letter-spacing: 0;
+}
+#complete-build:hover {
+    background: transparent;
+    color: #000;
+}
+.button-group {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+#complete-build {
+    font-family: Poppins;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    background-color: #000;
+    color: white;
+    border: 1px solid #000;
+    padding: 14px 20px;
+    min-width: 240px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+#edit-design {
+    font-family: Poppins;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    background-color: white;
+    color: black;
+    border: 1px solid #000;
+    padding: 14px 20px;
+    min-width: 240px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+
+#open-preview {
+    font-family: Poppins;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    background-color: white;
+    color: black;
+    border: 1px solid #000;
+    padding: 14px 20px;
+    min-width: 190px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+#edit-design:hover {
+    background: black;
+    color: white;
+}
+/* ERROR STYLES */
+.error-message {
+    color: red;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px auto 0 auto;
+    line-height: 150%;
+}
+.form-group.review-confirmation label {
+    display: inline-block;
+    color: #7E7E7E;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.form-group.review-confirmation {
+    margin-bottom: 40px;
+}
+.review-preview-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #7E7E7E;
+    text-decoration: underline;
+    font-family: Poppins;
+    font-size: 14px;
+}
+div#confirmation-error .error-message {
+    text-align: left;
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 0;
+}
+/* DETAIL DROPDOWN */
+.dropdown-details{
+  --padding: 10px;
+  border: 1px solid #8d8d8d;
+  border-radius: 4px;
+  margin-bottom: 50px;
+}
+.dropdown-details + .dropdown-details{
+  margin-top: 15px;
+}
+.details__title{
+  --width: 20px;
+  --height: 3px;
+  --radius: 1px;
+  --color: currentColor;
+  margin:0;
+  padding: var(--padding) calc(var(--width) * 2) var(--padding) var(--padding);
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  position: relative;
+  font-family: Poppins;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 400;
+  color: #000000;
+}
+.details__title:before,
+.details__title:after{
+  content:'';
+  display: block;
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--color);
+  position: absolute;
+  border-radius: var(--radius);
+  top: calc(50% - (var(--height) / 2));
+  right: calc(var(--width) / 2);
+  transition: all .2s ease-in-out;
+}
+.details__title:before {
+    right: 23px;
+    rotate: 45deg;
+}
+.details__container[open] .details__title:before {
+    rotate: -45deg;
+}
+.details__title:after {
+    rotate: -45deg;
+}
+.details__container[open] .details__title:after {
+    rotate: 45deg;
+}
+.details__container[open] .details__title{
+  background-color: #f3f3f3;
+}
+.details__summary::marker{
+  content:'';
+}
+.details__desc{
+  visibility: hidden;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: all .2s ease-in-out;
+  overflow: hidden;
+  padding-inline: var(--padding);
+  pointer-events: none;
+}
+.details__container[open] + .details__desc{
+  visibility: visible;
+  grid-template-rows: 1fr;
+  padding-block: var(--padding);
+}
+.details__desc-inner{
+  min-height: 0;
+}
+/* LIGHTBOX CONTAINER */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 80%;
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+}
+.caption {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+.close:hover {
+  color: red;
+}
+/* ======================================
+   RIGHT-SIDE PROGRESS MENU
+   ====================================== */
+.progress-menu {
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  z-index: 999;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  font-family: Poppins;
+  padding: 20px;
+  border-radius: 8px;
+  width: 220px;
+}
+.progress-menu h3 {
+  margin: 0 0 1em;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.progress-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.progress-menu li {
+  margin-bottom: 10px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.progress-menu li.active {
+  background-color: #000;
+  color: #fff;
+}
+/* ADDED: Styles for disabled steps */
+.progress-menu li.disabled {
+  background-color: #ddd;
+  color: #999;
+  cursor: not-allowed;
+}
+.progress-menu li.disabled:hover {
+  background-color: #ddd; /* no hover effect */
+}
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .progress-menu {
+      display: none;
+  }
+  .slider {
+      margin: 0 auto;
+  }
+}
+@media (max-width: 1105px) {
+  .slider,
+  .notebook-cover-slide .swiper-slide img,
+  .review-slide .swiper-slide img {
+      width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .progress-menu {
+    right: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .date-fields {
+      padding: 0 20px;
+  }
+  .date-fields .form-group {
+      width: 50%;
+  }
+  input[type="date"] {
+      padding: 18px 20px;
+      font-size: 30px;
+  }
+  .slide.review-slide {
+      flex-direction: column;
+      gap: 10px;
+  }
+  .review-slide .swiper-container {
+      width: 100%;
+  }
+  .review-slide .details {
+      width: 100%;
+      text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .lightbox-content {
+      margin-top: 100px;
+  }
+  
+  .lightbox .swiper-wrapper {
+      align-items: center;
+  }
+  .date-fields {
+      flex-direction: column;
+      width: 100%;
+  }
+  .date-fields .form-group {
+      width: 100%;
+  }
+  input[type="date"] {
+      font-size: 20px;
+  }
+  .slide h2 {
+      font-size: 26px;
+  }
+  .date-fields label {
+      font-size: 18px;
+  }
+  .controls {
+      gap: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+    
+  }
+  .controls button {
+      width: calc(50% - 5px);
+      min-width: unset;
+  }
+  #complete-build,
+  .details__title {
+      font-size: 20px;
+      width: 100%;
+  }
+  .review-slide .details {
+      text-align: left;
+  }
+  .progress-menu {
+      display: none;
+  }
+}
+
+/* ===========================
+   PREVIEW SWIPER: ADJUST SIZING
+   =========================== */
+#preview-swiper .swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#preview-swiper .swiper-slide img {
+  max-width: 80%;
+  max-height: 80vh;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  border-color: transparent;
+}
+
+/* ===========================
+   Caption under calendar-design images
+   =========================== */
+.calendar-caption,
+.inbetween-caption {
+  font-family: Poppins;
+  font-size: 14px;
+  color: #7E7E7E;
+  margin-top: 6px;
+  text-align: center;
+}
+.inbetween-caption {
+  margin: 0;
+}
+
+/* BOOK SIZE SELECTION STYLES */
+.book-size-options {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.book-size-option {
+  cursor: pointer;
+  position: relative;
+}
+
+.book-size-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.size-card {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  background: #fff;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.size-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #000;
+}
+
+.size-card p {
+  margin: 0 0 15px 0;
+  color: #7E7E7E;
+  font-size: 16px;
+}
+
+.size-card .price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000;
+}
+
+.book-size-option input[type="radio"]:checked + .size-card {
+  border-color: #000;
+  background: #f9f9f9;
+}
+
+.book-size-option:hover .size-card {
+  border-color: #999;
+}
+
+/* RESPONSIVE BOOK SIZE */
+@media (max-width: 768px) {
+  .book-size-options {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .size-card {
+    min-width: 280px;
+  }
+}
+</style>
+
+<!-- =======================
+     SHOPIFY PRODUCT FORM
+     ======================= -->
+
+<form action="/cart/add" method="post" id="add-to-cart-form">
+  <input type="hidden" name="id" class="notebook-variant-id" value="{{ product.first_available_variant.id }}"/>
+  <input type="hidden" name="properties[Start Date]" id="prop-start-date" />
+  <input type="hidden" name="properties[Notebook Cover]" id="prop-notebook-cover" />
+  <input type="hidden" name="properties[Calendar Type]" id="prop-calendar-type" />
+  <input type="hidden" name="properties[Calendar Page Design]" id="prop-calendar-page-design" />
+  <input type="hidden" name="properties[Book Size]" id="prop-book-size" />
+  <input type="hidden" name="properties[Total Pages Used]" id="prop-total-pages-used" />
+  <input type="hidden" name="properties[_segment]" id="prop-total-segment" />
+  <input type="hidden" name="properties[_preview]" id="prop-preview-link" />
+  <input type="hidden" name="properties[_cover-image]" id="prop-notebook-cover-image" />
+</form>
+
+<!-- ======================================
+     PROGRESS MENU (Right-hand side)
+     ====================================== -->
+<div class="progress-menu">
+  <h3>Build Progress</h3>
+  <ul id="progress-list">
+    <li data-target="0" class="active">Calendar Type</li>
+    <li data-target="1">Book Size</li>
+    <li data-target="2">Layout Options</li>
+    <li data-target="3">Start Date</li>
+    <li data-target="4">Cover</li>
+    <li data-target="5">Review</li>
+  </ul>
+</div>
+
+<!-- =======================
+     SLIDER WRAPPER
+     ======================= -->
+<div class="slider">
+    <div class="slides">
+        <!-- Slide 1: Calendar Type (index 0) -->
+        <div class="slide">
+            <h2>CHOOSE YOUR <br> Calendar Type</h2>
+            <p>{{ section.settings.calendar_type_text }}</p>
+            <div class="form-group">
+              {%- assign template_refs = product.metafields.custom.custom_templates.value -%}
+              {%- assign has_yearly = false -%}
+              {%- assign has_quarterly = false -%}
+              {%- assign has_monthly = false -%}
+              {%- assign has_weekly = false -%}
+              {%- assign has_daily = false -%}
+
+              {%- for template in template_refs -%}
+                {%- case template.type.value -%}
+                  {%- when 'Yearly' -%}
+                    {%- assign has_yearly = true -%}
+                  {%- when 'Quarterly' -%}
+                    {%- assign has_quarterly = true -%}
+                  {%- when 'Monthly' -%}
+                    {%- assign has_monthly = true -%}
+                  {%- when 'Weekly' -%}
+                    {%- assign has_weekly = true -%}
+                  {%- when 'Daily' -%}
+                    {%- assign has_daily = true -%}
+                {%- endcase -%}
+              {%- endfor -%}
+
+              <div class="calendar-btn-group">
+                {%- if has_yearly -%}
+                  <button class="calendar-btn" data-calendar="Yearly">Yearly</button>
+                {%- endif -%}
+                {%- if has_quarterly -%}
+                  <button class="calendar-btn" data-calendar="Quarterly">Quarterly</button>
+                {%- endif -%}
+                {%- if has_monthly -%}
+                  <button class="calendar-btn" data-calendar="Monthly">Monthly</button>
+                {%- endif -%}
+                {%- if has_weekly -%}
+                  <button class="calendar-btn" data-calendar="Weekly">Weekly</button>
+                {%- endif -%}
+                {%- if has_daily -%}
+                  <button class="calendar-btn" data-calendar="Daily">Daily</button>
+                {%- endif -%}
+              </div>
+
+            </div>
+            <div class="error-container"></div>
+        </div>
+
+        <!-- Slide 2: Book Size (index 1) -->
+        <div class="slide">
+            <h2>CHOOSE YOUR <br> Book Size</h2>
+            <p>Please select the number of pages you want your book to be. Each page is double-sided, meaning 1 physical sheet has 2 sides.</p>
+            <div class="form-group">
+              <div class="book-size-options">
+                {% for variant in product.variants %}
+                  {% if variant.available %}
+                    <label class="book-size-option">
+                      <input type="radio" name="book-size" value="{{ variant.title }}" data-pages="{{ variant.title }}" data-variant-id="{{ variant.id }}">
+                      <div class="size-card">
+                        <h3>{{ variant.title }} Pages</h3>
+                        {% if variant.metafields.custom.display_text %}
+                          <p>{{ variant.metafields.custom.display_text }}</p>
+                        {% else %}
+                          <p>Custom notebook size</p>
+                        {% endif %}
+                        <span class="price">{{ variant.price | money }}</span>
+                      </div>
+                    </label>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+            <div class="error-container"></div>
+        </div>
+
+        <!-- Slide 3: Layout Options (index 2) -->
+        <div class="slide with-slide">
+            <h2 id="calendar-design-heading">Choose Your Calendar Page Design</h2>
+            <p>{{ section.settings.calendar_design_text }}</p>
+            
+            <!-- Yearly (2-page spread) -->
+            <div class="swiper-container calendar-swiper-container" id="yearly-swiper" style="display:none;">
+                <div class="swiper-wrapper" id="yearly-calendar-container">
+                  {%- assign template_mf = product.metafields.custom.custom_templates.value -%}
+                  {%- assign templates = template_mf | where: "type", "Yearly" -%}
+                  {% for design in templates %}
+                    {%- assign template_preview = design.image_preview -%}
+                    <div class="swiper-slide calendar-swiper-slide">
+                      <img
+                        src="{{ template_preview | image_url: width: 340 }}"
+                        srcset="{{ template_preview | image_url: width: 340 }} 1x, {{ template_preview | image_url: width: 680 }} 2x"
+                        alt="{{ template_preview.alt | escape }}"
+                        class="calendar-cover-option calendar-design lightbox-image img-shadow"
+                        data-cover="{{ design.title }}"
+                        data-handle="{{ design.system.handle }}"
+                        data-large-src="{{ template_preview | image_url: width: 1500 }}"
+                        data-page-used="{{ design.page_used }}"
+                      >
+                      <p class="calendar-caption">Yearly Layout {{ forloop.index }}</p>
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <!-- Quarterly (2-page spread) -->
+            <div class="swiper-container calendar-swiper-container" id="quarterly-swiper" style="display:none;">
+                <div class="swiper-wrapper" id="quarterly-calendar-container">
+                  {%- assign template_mf = product.metafields.custom.custom_templates.value -%}
+                  {%- assign templates = template_mf | where: "type", "Quarterly" -%}
+                  {% for design in templates %}
+                    {%- assign template_preview = design.image_preview -%}
+                    <div class="swiper-slide calendar-swiper-slide">
+                      <img
+                        src="{{ template_preview | image_url: width: 340 }}"
+                        srcset="{{ template_preview | image_url: width: 340 }} 1x, {{ template_preview | image_url: width: 680 }} 2x"
+                        alt="{{ template_preview.alt | escape }}"
+                        class="calendar-cover-option calendar-design lightbox-image img-shadow"
+                        data-cover="{{ design.title }}"
+                        data-handle="{{ design.system.handle }}"
+                        data-large-src="{{ template_preview | image_url: width: 1500 }}"
+                        data-page-used="{{ design.page_used }}"
+                      >
+                      <p class="calendar-caption">Quarterly Layout {{ forloop.index }}</p>
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <!-- Monthly -->
+            <div class="swiper-container calendar-swiper-container" id="monthly-swiper" style="display:none;">
+                <div class="swiper-wrapper" id="monthly-calendar-container">
+                  {%- assign template_mf = product.metafields.custom.custom_templates.value -%}
+                  {%- assign templates = template_mf | where: "type", "Monthly" -%}
+                  {% for design in templates %}
+                    {%- assign template_preview = design.image_preview -%}
+                    <div class="swiper-slide calendar-swiper-slide">
+                      <img
+                        src="{{ template_preview | image_url: width: 340 }}"
+                        srcset="{{ template_preview | image_url: width: 340 }} 1x, {{ template_preview | image_url: width: 680 }} 2x"
+                        alt="{{ template_preview.alt | escape }}"
+                        class="calendar-cover-option calendar-design lightbox-image img-shadow"
+                        data-cover="{{ design.title }}"
+                        data-handle="{{ design.system.handle }}"
+                        data-large-src="{{ template_preview | image_url: width: 1500 }}"
+                        data-page-used="{{ design.page_used }}"
+                      >
+                      <p class="calendar-caption">Monthly Layout {{ forloop.index }}</p>
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <!-- Weekly -->
+            <div class="swiper-container calendar-swiper-container" id="weekly-swiper" style="display:none;">
+                <div class="swiper-wrapper" id="weekly-calendar-container">
+                  {%- assign template_mf = product.metafields.custom.custom_templates.value -%}
+                  {%- assign templates = template_mf | where: "type", "Weekly" -%}
+                  {% for design in templates %}
+                    {%- assign template_preview = design.image_preview -%}
+                    <div class="swiper-slide calendar-swiper-slide">
+                      <img
+                        src="{{ template_preview | image_url: width: 340 }}"
+                        srcset="{{ template_preview | image_url: width: 340 }} 1x, {{ template_preview | image_url: width: 680 }} 2x"
+                        alt="{{ template_preview.alt | escape }}"
+                        class="calendar-cover-option calendar-design lightbox-image img-shadow"
+                        data-cover="{{ design.title }}"
+                        data-handle="{{ design.system.handle }}"
+                        data-large-src="{{ template_preview | image_url: width: 1500 }}"
+                        data-page-used="{{ design.page_used }}"
+                      >
+                      <p class="calendar-caption">Weekly Layout {{ forloop.index }}</p>
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <!-- Daily -->
+            <div class="swiper-container calendar-swiper-container" id="daily-swiper" style="display:none;">
+                <div class="swiper-wrapper" id="daily-calendar-container">
+                  {%- assign template_mf = product.metafields.custom.custom_templates.value -%}
+                  {%- assign templates = template_mf | where: "type", "Daily" -%}
+                  {% for design in templates %}
+                    {%- assign template_preview = design.image_preview -%}
+                    <div class="swiper-slide calendar-swiper-slide">
+                      <img
+                        src="{{ template_preview | image_url: width: 340 }}"
+                        srcset="{{ template_preview | image_url: width: 340 }} 1x, {{ template_preview | image_url: width: 680 }} 2x"
+                        alt="{{ template_preview.alt | escape }}"
+                        class="calendar-cover-option calendar-design lightbox-image img-shadow"
+                        data-cover="{{ design.title }}"
+                        data-handle="{{ design.system.handle }}"
+                        data-large-src="{{ template_preview | image_url: width: 1500 }}"
+                        data-page-used="{{ design.page_used }}"
+                      >
+                      <p class="calendar-caption">Daily Layout {{ forloop.index }}</p>
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="error-container"></div>
+        </div>
+
+        <!-- Slide 4: Start Date (index 3) -->
+        <div class="slide">
+            <h2>CHOOSE YOUR <br> Start Date</h2>
+            <p>Select your start date for your notebook.</p>
+            <div class="date-fields">
+              <div class="form-group">
+                  <label for="start-date">Start Date:</label>
+                  <input type="date" id="start-date">
+              </div>
+            </div>
+            <div class="error-container"></div>
+        </div>
+
+        <!-- Slide 5: Notebook Cover (index 4) -->
+        <div class="slide with-slide notebook-cover-slide">
+            <h2>CHOOSE YOUR <br> Notebook Cover</h2>
+            <p>{{ section.settings.notebook_cover_text }}</p>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  {%- assign cover_mf = product.metafields.custom.covers.value -%}
+                  {% for cover_object in cover_mf %}
+                    {% assign cover_file = cover_object.preview_image %}
+                    <div class="swiper-slide">
+                      <img
+                        src="{{ cover_file | image_url: width: 250 }}"
+                        srcset="{{ cover_file | image_url: width: 250 }} 1x, {{ cover_file | image_url: width: 500 }} 2x"
+                        alt="{{ cover_file.alt | escape }}"
+                        class="cover-option"
+                        data-cover="{{ cover_object.title }}"
+                        data-cover-handle="{{ cover_object.system.handle }}"
+                        data-cover-file="{{ cover_object.template_file | file_url }}"
+                      >
+                      <p>{{ cover_object.title }}</p>
+                    </div>
+                  {% endfor %}
+                </div>
+                <!-- Add navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="error-container"></div>
+        </div>
+
+        <!-- Slide 6: Review Your Choices (index 5) -->
+        <div class="slide review-slide">
+            <div class="swiper-container" id="review-swiper">
+                <button id="open-preview" type="button">Full Book Preview</button>
+                <div class="swiper-wrapper">
+                    <!-- Notebook Cover -->
+                    <div class="swiper-slide" id="review-notebook-cover-slide" style="display:none;">
+                        <img id="review-notebook-cover-image" src="" alt="Notebook Cover">
+                    </div>
+                    <!-- Calendar Design -->
+                    <div class="swiper-slide" id="review-calendar-design-slide" style="display:none;">
+                        <img id="review-calendar-design-image" src="" alt="Calendar Page Design">
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="details">
+              <h2>{{ section.settings.review_heading }}</h2>
+              <p>{{ section.settings.review_text }}</p>
+              <div class="dropdown-details">
+                <details class="details__container">
+                  <summary class="details__summary">
+                    <!-- The title -->
+                    <h6 class="details__title">My Book Details</h6>
+                  </summary>
+                </details>
+                <!-- The content -->
+                <div class="details__desc">
+                  <div class="details__desc-inner">
+                    <ul>
+                      <li>Calendar Type: <span id="review-calendar-type"></span></li>
+                      <li>Book Size: <span id="review-book-size"></span></li>
+                      <li>Calendar Page Design: <span id="review-calendar-page-design"></span></li>
+                      <li>Start Date: <span id="review-start-date"></span></li>
+                      <li>Notebook Cover: <span id="review-notebook-cover"></span></li>
+                      <li>Total Price: <span id="review-price"></span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group review-confirmation">
+                  <input type="checkbox" id="review-confirmation-checkbox">
+                  <label for="review-confirmation-checkbox">I have reviewed and approve my design.</label>
+                  <div class="error-container" id="confirmation-error"></div>
+              </div>
+              <div class="button-group">
+                <button id="complete-build" type="button">Finalize & Add to Cart</button>
+                <button id="edit-design" type="button">Edit</button>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="prev">Previous</button>
+        <button id="next">Next Step</button>
+    </div>
+</div>
+
+<!-- Lightbox Container (for calendar design enlargements) -->
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-content" alt="Lightbox Image">
+    <div id="caption" class="caption"></div>
+</div>
+
+
+<!-- =======================
+     MAIN SCRIPT
+     ======================= -->
+<script>
+$(document).ready(function() {
+    const $slides = $('.slides');
+    const $slide = $('.slide');
+    const totalSlides = $slide.length;
+
+    let currentIndex = 0;
+    let maxAccessibleIndex = 0; 
+
+    // Variables for user selections
+    let selectedCalendarType = null;
+    let selectedBookSize = null;
+    let selectedVariantId = null;
+    let selectedCalendarPageDesign = null;
+    let selectedStartDate = null;
+    let selectedNotebookCover = null;
+    let selectedNotebookCoverImage = null;
+
+    // Progress list items (right-hand progress menu)
+    const $progressListItems = $('#progress-list li');
+
+    // ==================================
+    // Utility Functions
+    // ==================================
+    function daysBetweenDates(start, end) {
+        return Math.floor((end - start) / (1000 * 60 * 60 * 24)) + 1;
+    }
+    
+    function getYearCount(start, end) {
+        return end.getFullYear() - start.getFullYear() + 1;
+    }
+    
+    function getMonthCount(start, end) {
+        return (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth() + 1);
+    }
+    
+    function getWeekCount(start, end) {
+        return Math.floor((end - start) / (1000 * 60 * 60 * 24 * 7));
+    }
+    
+    // Fixed page calculation: Each page is double-sided, so physical sheets = sides ÷ 2
+    function getSegmentsBasedOnDates(type, startDate, endDate) {
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        switch(type) {
+            case 'Yearly':
+                return getYearCount(start, end);
+            case 'Quarterly':
+                return 1;
+            case 'Monthly':
+                return getMonthCount(start, end);
+            case 'Weekly':
+                return getWeekCount(start, end);
+            case 'Daily':
+                // For daily, calculate the number of days and convert to physical sheets
+                const days = daysBetweenDates(start, end);
+                return Math.ceil(days / 2); // Each physical sheet has 2 sides
+            default:
+                return 1;
+        }
+    }
+    
+
+    // ==================================
+    // Progress Menu (Disable Future Steps)
+    // ==================================
+    function updateProgressMenu() {
+      $progressListItems.each(function() {
+        const stepIndex = parseInt($(this).data('target'), 10);
+        if (stepIndex <= maxAccessibleIndex) {
+          $(this).removeClass('disabled');
+        } else {
+          $(this).addClass('disabled');
+        }
+      });
+    }
+
+    // ==================================
+    // Slider Navigation & Visibility
+    // ==================================
+    function updateSlider() {
+        const offset = -currentIndex * 100;
+        $slides.css('transform', `translateX(${offset}%)`);
+        $slide.removeClass('active');
+        $slide.eq(currentIndex).addClass('active');
+
+        // Show/hide nav buttons
+        $('#prev').toggle(currentIndex !== 0);
+        $('#next').toggle(currentIndex !== totalSlides - 1);
+
+        // Highlight the current step
+        $progressListItems.removeClass('active');
+        $progressListItems.filter(`[data-target="${currentIndex}"]`).addClass('active');
+
+        // Update progress menu
+        updateProgressMenu();
+    }
+
+    // Jump to a specific slide (when user clicks progress menu)
+    $progressListItems.on('click', function(e) {
+        const targetSlide = parseInt($(this).data('target'), 10);
+        if (targetSlide > maxAccessibleIndex) {
+            e.preventDefault();
+            return;
+        }
+        goToSlide(targetSlide);
+    });
+    function goToSlide(slideNumber) {
+        currentIndex = slideNumber;
+        updateSlider();
+    }
+
+    // ==================================
+    // Error Handling
+    // ==================================
+    function showSlideError(slideIndex, message, highlightSelectors=[]) {
+        const $currentSlide = $slide.eq(slideIndex);
+        $currentSlide.find('.error-container').html(`<div class="error-message">${message}</div>`);
+        highlightSelectors.forEach(sel => {
+            $currentSlide.find(sel).addClass('error-field');
+        });
+    }
+    function clearSlideError(slideIndex) {
+        const $currentSlide = $slide.eq(slideIndex);
+        $currentSlide.find('.error-container').empty();
+        $currentSlide.find('.error-field').removeClass('error-field');
+    }
+
+    // ==================================
+    // Slide Validation
+    // ==================================
+    function validateSlide(index) {
+        clearSlideError(index);
+
+        // Slide 0: Must pick a calendar type
+        if (index === 0) {
+            if (!selectedCalendarType) {
+                showSlideError(0, 'Please select a calendar type before proceeding.', ['.calendar-btn']);
+                return false;
+            }
+        }
+
+        // Slide 1: Must pick a book size
+        if (index === 1) {
+            if (!selectedBookSize) {
+                showSlideError(1, 'Please select a book size before proceeding.', ['.book-size-option']);
+                return false;
+            }
+        }
+
+        // Slide 2: Must pick a calendar page design
+        if (index === 2) {
+            if (!selectedCalendarPageDesign) {
+                showSlideError(2, 'Please select a calendar page design before proceeding.', ['.calendar-cover-option']);
+                return false;
+            }
+        }
+
+        // Slide 3: Must pick a start date
+        if (index === 3) {
+            selectedStartDate = $('#start-date').val();
+            if (!selectedStartDate) {
+                showSlideError(3, 'Please select a start date.', ['#start-date']);
+                return false;
+            }
+        }
+
+        // Slide 4: Must pick a notebook cover
+        if (index === 4) {
+            if (!selectedNotebookCover) {
+                showSlideError(4, 'Please select a notebook cover before proceeding.', ['.cover-option']);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+
+    // ==================================
+    // Prev/Next Click Handlers
+    // ==================================
+    $('#prev').click(function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    });
+
+    $('#next').click(function() {
+        // 1) Validate current slide
+        if (!validateSlide(currentIndex)) {
+            return;
+        }
+
+
+        // 3) If leaving slide 4 (notebook cover), populate review data
+        if (currentIndex === 4) {
+            // Get the selected variant price
+            var selectedPrice = $('input[name="book-size"]:checked').siblings('.size-card').find('.price').text();
+            
+            // Populate the review slide text
+            $('#review-calendar-type').text(selectedCalendarType || 'None Selected');
+            $('#review-book-size').text(selectedBookSize + ' Pages');
+            $('#review-calendar-page-design').text(selectedCalendarPageDesign || 'None Selected');
+            $('#review-start-date').text(selectedStartDate || 'N/A');
+            $('#review-notebook-cover').text(selectedNotebookCover || 'None Selected');
+            $('#review-price').text(selectedPrice || 'N/A');
+
+            // Build preview URL for external link and hidden input
+            var designHandle = $('.calendar-design.selected:visible').attr('data-handle');
+            var coverHandle = $('.cover-option.selected:visible').attr('data-cover-handle');
+            var previewParams = [
+              'type=' + (selectedCalendarType || ''),
+              'design=' + (designHandle || ''),
+              'cover=' + (coverHandle || ''),
+              'start-date=' + (selectedStartDate || ''),
+              'book-size=' + (selectedBookSize || '')
+            ].join('&');
+            var previewBase = window.location.origin + '/products/build-your-book';
+            var previewUrl = previewBase + '?view=build-your-book-preview&preview=true&' + previewParams;
+            $('#external-preview-link').attr('href', previewUrl);
+
+            // Hidden form fields for Shopify
+            $('#prop-start-date').val(selectedStartDate || 'N/A');
+            $('#prop-notebook-cover').val(selectedNotebookCover || 'None');
+            $('#prop-notebook-cover-image').val(selectedNotebookCoverImage || 'None');
+            $('#prop-calendar-type').val(selectedCalendarType || 'None');
+            $('#prop-calendar-page-design').val(selectedCalendarPageDesign || 'None');
+            $('#prop-book-size').val(selectedBookSize || 'None');
+            $('#prop-preview-link').val(previewUrl);
+        }
+
+        // 4) Mark next slide as accessible if we're advancing
+        if (currentIndex >= maxAccessibleIndex) {
+            maxAccessibleIndex = currentIndex + 1; 
+        }
+
+        // 5) Go to the next slide
+        if (currentIndex < totalSlides - 1) {
+            currentIndex++;
+            updateSlider();
+
+            // If we just landed on the final slide (5), populate images
+            if (currentIndex === 5) {
+                populateReviewImages();
+                reviewSwiper.update();
+            }
+        }
+    });
+
+    // ==================================
+    // Finalize & Add to Cart
+    // ==================================
+    var variants = [
+      {% for variant in product.variants %}
+        {
+          id: {{ variant.id }},
+          title: "{{ variant.title | strip }}"
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+
+    function getVariantIdByPageCount(pagecount) {
+      for (var i = 0; i < variants.length; i++) {
+        var title = variants[i].title;
+
+        if (title.includes('+')) {
+          // Handle "301+" style titles
+          var min = parseInt(title);
+          if (pagecount >= min) return variants[i].id;
+
+        } else if (title.includes('-')) {
+          // Handle "0-100", "101-200", etc.
+          var parts = title.split('-');
+          var min = parseInt(parts[0]);
+          var max = parseInt(parts[1]);
+
+          if (pagecount >= min && pagecount <= max) {
+            return variants[i].id;
+          }
+        }
+      }
+
+      return null;
+    }
+
+    $('#complete-build').on('click', function(event) {
+      // Get other hidden input values
+      var type = $('#prop-calendar-type').val().toLowerCase();
+      var designRaw = $('.calendar-design.selected:visible').attr('data-handle');
+      var cover = $('.cover-option.selected:visible').attr('data-cover-handle')
+      var startDate = $('#prop-start-date').val();
+      var bookSize = $('#prop-book-size').val();
+
+      // Build query string
+      let queryParams = [
+        'type=' + type,
+        'design=' + designRaw,
+        'cover=' + cover,
+        'start-date=' + startDate,
+        'book-size=' + bookSize
+      ];
+
+      var queryString = queryParams.join('&');
+
+      // Build final URL
+      var baseUrl = window.location.origin + '/products/build-your-book';
+      var fullUrl = baseUrl + '?view=build-your-book-preview&preview=true&' + queryString;
+
+      // Use the selected variant ID directly
+      console.log('selectedVariantId', selectedVariantId);
+      if (selectedVariantId) {
+        var input = document.querySelector('.notebook-variant-id');
+        if (input) input.value = selectedVariantId;
+      }
+
+      $('#prop-preview-link').val(fullUrl);
+
+      if (!$('#review-confirmation-checkbox').is(':checked')) {
+          event.preventDefault();
+          $('#confirmation-error').html('<div class="error-message">Please check the confirmation box before proceeding.</div>');
+          $('label[for="review-confirmation-checkbox"]').addClass('error-field');
+      } else {
+          $('#add-to-cart-form').submit();
+      }
+    });
+
+    // Preview button (on Review step)
+    $('#open-preview').on('click', function() {
+      var href = $('#external-preview-link').attr('href');
+      if (!href || href === '#') {
+        // Build it if not built yet (user jumped directly here somehow)
+        var type = $('#prop-calendar-type').val().toLowerCase();
+        var designRaw = $('.calendar-design.selected:visible').attr('data-handle');
+        var cover = $('.cover-option.selected:visible').attr('data-cover-handle');
+        var startDate = $('#prop-start-date').val();
+        var bookSize = $('#prop-book-size').val();
+        var queryParams = [
+          'type=' + type,
+          'design=' + designRaw,
+          'cover=' + cover,
+          'start-date=' + startDate,
+          'book-size=' + bookSize
+        ];
+        var previewUrl = window.location.origin + '/products/build-your-book?view=build-your-book-preview&preview=true&' + queryParams.join('&');
+        $('#external-preview-link').attr('href', previewUrl);
+        $('#prop-preview-link').val(previewUrl);
+        href = previewUrl;
+      }
+      window.open(href, '_blank', 'noopener');
+    });
+
+    // Edit Button
+    $('#edit-design').on('click', function() {
+        currentIndex = 0;
+        maxAccessibleIndex = 0;
+        updateSlider();
+    });
+    $('#review-confirmation-checkbox').change(function() {
+        if ($(this).is(':checked')) {
+            $('#confirmation-error').empty();
+            $('label[for="review-confirmation-checkbox"]').removeClass('error-field');
+        }
+    });
+
+    // ==================================
+    // Notebook Cover Swiper
+    // ==================================
+    const mainSwiper = new Swiper('.notebook-cover-slide .swiper-container', {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '.notebook-cover-slide .swiper-button-next',
+            prevEl: '.notebook-cover-slide .swiper-button-prev',
+        },
+        breakpoints: {
+          0:   { slidesPerView: 1, spaceBetween: 10 },
+          768: { slidesPerView: 2, spaceBetween: 20 },
+          769: { slidesPerView: 3, spaceBetween: 30 }
+        }
+    });
+    $('.cover-option').click(function() {
+        $('.cover-option').removeClass('selected');
+        $(this).addClass('selected');
+        selectedNotebookCover = $(this).data('cover');
+        selectedNotebookCoverImage = 'https:' + $(this).attr('data-cover-file');
+        clearSlideError(4);
+    });
+
+    // ==================================
+    // Book Size Selection
+    // ==================================
+    $('input[name="book-size"]').change(function() {
+        selectedBookSize = $(this).val();
+        selectedVariantId = $(this).data('variant-id');
+        clearSlideError(1);
+    });
+
+    // ==================================
+    // Calendar Selection
+    // ==================================
+    const calendarConfig = {
+        'Yearly': {
+            container: '#yearly-swiper',
+            heading: 'Choose Your Calendar Page Design - Yearly'
+        },
+        'Quarterly': {
+            container: '#quarterly-swiper',
+            heading: 'Choose Your Calendar Page Design - Quarterly'
+        },
+        'Monthly': {
+            container: '#monthly-swiper',
+            heading: 'Choose Your Calendar Page Design - Monthly'
+        },
+        'Weekly': {
+            container: '#weekly-swiper',
+            heading: 'Choose Your Calendar Page Design - Weekly'
+        },
+        'Daily': {
+            container: '#daily-swiper',
+            heading: 'Choose Your Calendar Page Design - Daily'
+        }
+    };
+    const swiperInstances = {};
+
+    function initCalendarSwiper(type) {
+        if (!swiperInstances[type]) {
+            swiperInstances[type] = new Swiper(calendarConfig[type].container, {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 30,
+                loop: true,
+                navigation: {
+                  nextEl: `${calendarConfig[type].container} .swiper-button-next`,
+                  prevEl: `${calendarConfig[type].container} .swiper-button-prev`,
+                },
+                breakpoints: {
+                  0:   { slidesPerView: 1, spaceBetween: 10 },
+                  768: { slidesPerView: 2, spaceBetween: 20 },
+                  769: { slidesPerView: 3, spaceBetween: 30 }
+                }
+            });
+        } else {
+            swiperInstances[type].update();
+        }
+    }
+
+    function showCalendarType(type) {
+        // Hide all calendar swipers first
+        Object.values(calendarConfig).forEach(cfg => $(cfg.container).hide());
+        // Change heading
+        $('#calendar-design-heading').text(calendarConfig[type].heading);
+        // Show the relevant swiper
+        $(calendarConfig[type].container).show();
+        initCalendarSwiper(type);
+    }
+
+    $('.calendar-btn').click(function() {
+        $('.calendar-btn').removeClass('selected');
+        $(this).addClass('selected');
+        selectedCalendarType = $(this).data('calendar');
+        clearSlideError(0);
+        showCalendarType(selectedCalendarType);
+    });
+
+    // Clicking on a calendar cover
+    $(document).on('click', '.calendar-cover-option', function() {
+        $('.calendar-cover-option').removeClass('selected');
+        $(this).addClass('selected');
+        selectedCalendarPageDesign = $(this).data('cover');
+        clearSlideError(2);
+    });
+
+
+    // ==================================
+    // Final Review Slide (Images)
+    // ==================================
+    function populateReviewImages() {
+        // Notebook Cover
+        $('#review-notebook-cover-slide').hide();
+        if (selectedNotebookCover) {
+            $('#review-notebook-cover-image')
+              .attr('src', $('.cover-option.selected').attr('src'));
+            $('#review-notebook-cover-slide').show(); 
+        }
+
+        // Calendar Design
+        $('#review-calendar-design-slide').hide();
+        if (selectedCalendarPageDesign) {
+            $('#review-calendar-design-image')
+              .attr('src', $('.calendar-cover-option.selected').attr('src'));
+            $('#review-calendar-design-slide').show();
+        }
+    }
+
+    const reviewSwiper = new Swiper('#review-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '#review-swiper .swiper-button-next',
+            prevEl: '#review-swiper .swiper-button-prev',
+        },
+    });
+
+    // ==================================
+    // Lightbox for Calendar Design Images
+    // ==================================
+    $('.lightbox-image').on('click', function () {
+      const imageSrc = $(this).attr('data-large-src');
+      const imageAlt = $(this).attr('alt');
+      $('#lightbox-content').attr('src', imageSrc);
+      $('#caption').text(imageAlt);
+      $('#lightbox').fadeIn();
+    });
+    $('.close').on('click', function () {
+      $('#lightbox').fadeOut();
+    });
+    $('#lightbox').on('click', function (e) {
+      if ($(e.target).is('#lightbox')) {
+        $('#lightbox').fadeOut();
+      }
+    });
+
+
+    // Initialize first slide
+    updateSlider();
+});
+</script>
+
+{% schema %}
+{
+  "name": "Build Your Book-Metafield",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Dates"
+    },
+    {
+      "type": "text",
+      "id": "dates_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Notebook Cover"
+    },
+    {
+      "type": "text",
+      "id": "notebook_cover_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Calendar Type"
+    },
+    {
+      "type": "text",
+      "id": "calendar_type_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Calendar Page Design"
+    },
+    {
+      "type": "text",
+      "id": "calendar_design_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "To Do & Meetings"
+    },
+    {
+      "type": "text",
+      "id": "todo_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Personal & Wellness"
+    },
+    {
+      "type": "text",
+      "id": "personal_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Generic"
+    },
+    {
+      "type": "text",
+      "id": "generic_text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Review"
+    },
+    {
+      "type": "text",
+      "id": "review_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "review_text",
+      "label": "Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Build Your Book"
+    }
+  ]
+}
+{% endschema %}

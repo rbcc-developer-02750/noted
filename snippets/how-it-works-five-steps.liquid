@@ -1,0 +1,80 @@
+<div class="how-it-works">
+  {% if block.settings.video != blank %}
+    <div class="media-wrapper">
+      {{
+        block.settings.video
+        | video_tag:
+          autoplay: false,
+          loop: true,
+          muted: false,
+          controls: false,
+          image_size: '600x',
+          poster: poster,
+          id: 'hiwMedia'
+      }}
+      <div id="playButton">
+        <button onclick="playHiwVideo()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="50" viewBox="0 0 44 50" fill="none">
+            <path d="M42 21.5359C44.6667 23.0755 44.6667 26.9245 42 28.4641L5.99999 49.2487C3.33333 50.7883 -2.44188e-06 48.8638 -2.30729e-06 45.7846L-4.9024e-07 4.21539C-3.55644e-07 1.13618 3.33333 -0.788313 6 0.751288L42 21.5359Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  {% endif %}
+  <div class="text-wrapper {% if block.settings.video == blank %}full-w{% endif %}">
+    <h4>{{ block.settings.title }}</h4>
+    <div class="steps-wrapper">
+      {% if block.settings.step_one != blank %}
+        <div class="step">
+          <div class="step-title">Step 1</div>
+          <div class="step-content">
+            {{ block.settings.step_one }}
+          </div>
+        </div>
+      {% endif %}
+      {% if block.settings.step_two != blank %}
+        <div class="step">
+          <div class="step-title">Step 2</div>
+          <div class="step-content">
+            {{ block.settings.step_two }}
+          </div>
+        </div>
+      {% endif %}
+      {% if block.settings.step_three != blank %}
+        <div class="step">
+          <div class="step-title">Step 3</div>
+          <div class="step-content">
+            {{ block.settings.step_three }}
+          </div>
+        </div>
+      {% endif %}
+      {% if block.settings.step_four != blank %}
+        <div class="step">
+          <div class="step-title">Step 4</div>
+          <div class="step-content">
+            {{ block.settings.step_four }}
+          </div>
+        </div>
+      {% endif %}
+      {% if block.settings.step_five != blank %}
+        <div class="step">
+          <div class="step-title">Step 5</div>
+          <div class="step-content">
+            {{ block.settings.step_five }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    <a href="{{ block.settings.cta_link }}" class="cta">{{ block.settings.cta_label }}</a>
+  </div>
+</div>
+
+<script>
+  function playHiwVideo() {
+    const video = document.querySelector('#hiwMedia');
+    const play = document.querySelector('#playButton');
+
+    play.style.display = 'none';
+    video.play();
+  }
+</script>

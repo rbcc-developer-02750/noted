@@ -1,0 +1,328 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>NOTEBOOKS THAT WORK FOR EVERYONE</p>",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "BUILD A BOOK",
+            "button_link_1": "shopify://products/build-your-book",
+            "button_style_secondary_1": true,
+            "button_label_2": "CORPORATE BOOKS",
+            "button_link_2": "shopify://pages/corporate-orders",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Group_66.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false,
+        "custom_class": "ib-one"
+      }
+    },
+    "announcement_bar_mprGqK": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_TPETj6": {
+          "type": "announcement",
+          "settings": {
+            "text": "YOU CHOOSE THE PAGES, WE PRINT IT",
+            "link": ""
+          }
+        },
+        "announcement_wUkRYH": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_TPETj6",
+        "announcement_wUkRYH"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "custom_class": "announcement-one"
+      }
+    },
+    "tabbed_content_aFRbaR": {
+      "type": "tabbed-content",
+      "blocks": {
+        "build_your_book_8weady": {
+          "type": "build_your_book",
+          "settings": {
+            "button_label": "Book Details",
+            "product": "build-your-book",
+            "details": "Our custom printed books measure 7.25\" X 9.25\" and are coil-bound with a sturdy, soft-touch laminated 14pt cover. \n\nThe interior pages are printed on high-quality 70# white offset paper, with options for 200 or 400 pages. \n\nWatch here for a closer look!",
+            "picker_type": "dropdown",
+            "swatch_shape": "none"
+          }
+        },
+        "how_it_works_five_steps_LxkEkD": {
+          "type": "how_it_works_five_steps",
+          "settings": {
+            "button_label": "How it Works",
+            "title": "How it Works",
+            "video": "shopify://files/videos/3945140-uhd_4096_2160_25fps.mp4",
+            "cta_link": "#",
+            "cta_label": "Build Your Book",
+            "step_one": "Select your start and end date",
+            "step_two": "Pick your cover (all covers are made from durable 14pt laminated cardstock). Click here for custom options.",
+            "step_three": "Choose your calendar layout— Do you want your notebook to be organized by the days, weeks, monthly, quarters or years?",
+            "step_four": "Add additional pages for personal, wellness, work, to-do lists, and more.",
+            "step_five": "Review & submit. We’ll print and ship your custom notebook to you!"
+          }
+        },
+        "pre_made_books_PfHWtd": {
+          "type": "pre_made_books",
+          "settings": {
+            "button_label": "Pre-Made Books",
+            "collection": "pre-made-books"
+          }
+        },
+        "faq_Txripf": {
+          "type": "faq",
+          "settings": {
+            "button_label": "FAQs"
+          }
+        }
+      },
+      "block_order": [
+        "build_your_book_8weady",
+        "how_it_works_five_steps_LxkEkD",
+        "pre_made_books_PfHWtd",
+        "faq_Txripf"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_class": ""
+      }
+    },
+    "image_with_text_4MX8rK": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_6EMNz6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Notebooks work better when you make your own",
+            "heading_size": "h1"
+          }
+        },
+        "text_kiriRm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The idea for Noted was born from a personal desire to find a notebook that make sense for my day to day. I envisioned a notebook that could be customized to match your schedule, priorities, events or whatever else you do. </p>",
+            "text_style": "body"
+          }
+        },
+        "button_EzDACr": {
+          "type": "button",
+          "settings": {
+            "button_label": "LEARN MORE",
+            "button_link": "#",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_6EMNz6",
+        "text_kiriRm",
+        "button_EzDACr"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/77707a2f09f6d7ef2c4fe48f21006b01.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_class": "iwt-one"
+      }
+    },
+    "static_reviews_m8jJMH": {
+      "type": "static-reviews",
+      "blocks": {
+        "review_ALCMAm": {
+          "type": "review",
+          "settings": {
+            "name": "Sarah Orr Brandful Studio",
+            "review": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ipsum kol.”"
+          }
+        },
+        "review_a3tQEG": {
+          "type": "review",
+          "settings": {
+            "name": "Sarah Orr Brandful Studio",
+            "review": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ipsum kol.”"
+          }
+        },
+        "review_7BhprL": {
+          "type": "review",
+          "settings": {
+            "name": "Sarah Orr Brandful Studio",
+            "review": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ipsum kol.”"
+          }
+        },
+        "review_L6ekpH": {
+          "type": "review",
+          "settings": {
+            "name": "Sarah Orr Brandful Studio",
+            "review": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ipsum kol.”"
+          }
+        },
+        "review_XKeRKW": {
+          "type": "review",
+          "settings": {
+            "name": "Sarah Orr Brandful Studio",
+            "review": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ipsum kol.”"
+          }
+        }
+      },
+      "block_order": [
+        "review_ALCMAm",
+        "review_a3tQEG",
+        "review_7BhprL",
+        "review_L6ekpH",
+        "review_XKeRKW"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "What our clients are saying"
+      }
+    },
+    "rich_text_aKMGg7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rBeYJg": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Come hang with us</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "button_rC8nkY": {
+          "type": "button",
+          "settings": {
+            "button_label": "VIEW OUR INSTAGRAM",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_rBeYJg",
+        "button_rC8nkY"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "17411138261e1011c4": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_9gwkf6": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_9gwkf6"
+      ],
+      "settings": {
+        "include_margins": true,
+        "custom_class": ""
+      }
+    },
+    "contact_form_v_two_7nTkEy": {
+      "type": "contact-form-v-two",
+      "settings": {
+        "heading": "Have questions for our team?",
+        "heading_size": "h1",
+        "subtitle": "Fill in the form below and our team will get in touch with you asap.",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "bg_img": "shopify://shop_images/newsletterbg.jpg"
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "announcement_bar_mprGqK",
+    "tabbed_content_aFRbaR",
+    "image_with_text_4MX8rK",
+    "static_reviews_m8jJMH",
+    "rich_text_aKMGg7",
+    "17411138261e1011c4",
+    "contact_form_v_two_7nTkEy"
+  ]
+}

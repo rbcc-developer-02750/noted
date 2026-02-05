@@ -1,0 +1,7 @@
+.multibuttons-section .multibuttons-section-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 105px;
+  padding-top: 75px;
+}

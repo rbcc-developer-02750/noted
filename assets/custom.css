@@ -1,0 +1,724 @@
+html {
+  scroll-behavior: smooth;
+}
+#MainContent {
+  margin-top: -195px;
+}
+
+.header:not(.drawer-menu).page-width {
+  padding-left: 100px;
+  padding-right: 100px;
+  max-width: 100%;
+  margin: 0px;
+}
+
+.header--middle-left {
+  grid-template-areas: "heading navigation icons";
+  grid-template-columns: auto auto auto;
+  column-gap: 2rem;
+}
+.header__icon--menu {
+    color: #000 !important;
+}
+/* Font 106px */
+.banner--desktop-transparent.ib-one .banner__box h2 p {
+  text-align: center;
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0px;
+}
+
+/* Font 44px */
+.iwt-one .page-width .image-with-text__content h2.image-with-text__heading {
+  color: #1E1E1E;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; /* 113.636% */
+}
+
+.contact-one .page-width h2.title {
+  color: #1E1E1E;
+  text-align: center;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; /* 113.636% */
+}
+
+.contact-one .page-width p.sub-title {
+  color: #1E1E1E;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+  margin: 15px 0px 0px;
+}
+
+.static-reviews-section .header-wrapper h2 {
+  color: #1E1E1E;
+  text-align: center;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; /* 113.636% */
+  margin: 0px;
+}
+
+.static-instagram-section .header-wrapper h2 {
+  color: #1E1E1E;
+  text-align: center;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; /* 113.636% */
+  margin: 0px;
+}
+
+.contact.contact-v-two h2.title {
+  color: #FFF;
+  text-align: center;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; /* 113.636% */
+  margin-bottom: 0px;
+}
+
+.iwt-about .page-width .image-with-text__text-item.grid__item .image-with-text__content .image-with-text__heading {
+  color: #1E1E1E;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; /* 113.636% */
+}
+
+.video-with-text-section .text-wrapper .title {
+  color: #1E1E1E;
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 50px; /* 113.636% */
+  margin-top: 0px
+}
+
+/* Font 32px */
+.tabbed-content-section .tabbed-content-wrapper .build-your-book .detail-wrapper h4,
+.tabbed-content-section .tabbed-content-wrapper .build-your-book .product-form h4,
+.tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #1E1E1E;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.tabbed-content-section .faq .faq-grid .faq-wrapper h5 {
+  margin-top: 0px;
+  margin-bottom: 29px;
+  color: #1E1E1E;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.tabbed-content-section .pre-made-books .products-grid-wrapper .details-wrapper h3 {
+  color: #000;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-top: 0px;
+  margin-bottom: 18px;
+}
+
+.tabbed-content-section .tab-product .details-wrapper .details-wrapper-title {
+  color: #1E1E1E;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+
+/* Font 30px */
+.ib-one .banner__buttons a.button {
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 3px;
+}
+
+/* Font 28px */
+.multibuttons-section .multibuttons-section-wrapper a {
+  color: #757575;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.multibuttons-section .multibuttons-section-wrapper a:hover,
+.multibuttons-section .multibuttons-section-wrapper a.active {
+  color: #000;
+  text-decoration-line: underline;
+}
+
+.tabbed-content-section .tabbed-button-wrapper button {
+  color: #757575;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+}
+
+.tabbed-content-section .tabbed-button-wrapper button.active,
+.tabbed-content-section .tabbed-button-wrapper button:hover {
+  text-decoration-line: underline;
+  color: #000;
+}
+
+/* Font 25px */
+.announcement-one .announcement-bar__message {
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper .cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #000;
+  width: 320px;
+  height: 68px;
+  flex-shrink: 0;
+  color: #FFF;
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 44px;
+}
+
+.tabbed-content-section .pre-made-books .products-grid-wrapper .details-wrapper a {
+  padding: 15px 28px;
+  color: #000;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2.5px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 2px solid #000;
+  text-transform: uppercase;
+}
+
+.iwt-one .page-width .button.button--primary {
+  border-radius: 5px;
+  background: #000;
+  width: 248px;
+  height: 68px;
+  flex-shrink: 0;
+  color: #FFF;
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2.5px;
+  margin-top: 53px;
+}
+
+.shopify-section .contact.contact-v-two #ContactForm .contact__button button {
+  width: 175px;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  color: #FFF;
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2.5px;
+}
+
+.tabbed-content-section .product-form a.cta-btn {
+  background: #000;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  width: 320px;
+  height: 68px;
+  color: #FFF;
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2.5px;
+  margin-top: 48px;
+}
+
+.tabbed-content-section .tab-product .details-wrapper .details-button-wrapper .details-button {
+  color: #FFF;
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tabbed-content-section .tab-product .details-wrapper .details-button-wrapper .details-button:hover {
+  background: #F9E97A;
+}
+
+/* Font 22px */
+.list-menu a.header__menu-item {
+  color: #FFF;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2.8px;
+}
+
+.tabbed-content-section .tabbed-content-wrapper .build-your-book .detail-wrapper p,
+.tabbed-content-section .tabbed-content-wrapper .build-your-book .product-form p {
+  margin-top: 18px;
+  margin-bottom: 0px;
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+}
+
+.tabbed-content-section .faq .faq-grid .faq-wrapper p {
+  margin-top: 0px;
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+  margin-bottom: 0px;
+}
+
+.tabbed-content-section .variant-picker-wrapper .tabbed_content-variant_select .product-form__input .select select {
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 26.4px */
+}
+
+.tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper .steps-wrapper .step .step-title {
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 27.5px */
+}
+
+.tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper .steps-wrapper .step .step-content {
+  color: #1E1E1E;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+}
+
+.iwt-one .page-width .image-with-text__content .image-with-text__text p {
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+  margin: 0px;
+}
+
+.static-reviews-section .swiper-slide .reviews-card .profile-name-img-wrapper p {
+  margin-top: 0px;
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+}
+
+.static-reviews-section .swiper-slide .reviews-card .profile-name-img-wrapper p {
+  max-width: 200px;
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 27.5px */
+  margin: 0px;
+}
+
+.static-instagram-section .header-wrapper a {
+  color: #7E7E7E;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  margin-top: 40px;
+}
+
+.shopify-section p.subtitle {
+  color: #FFF;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+  margin-top: 15px;
+  margin-bottom: 59px;
+}
+
+.shopify-section .contact.contact-v-two .input_field p {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 26.4px */
+  margin: 0px;
+}
+
+.tabbed-content-section .pre-made-books .products-grid-wrapper .details-wrapper p {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+  margin-top: 0px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.static-reviews-section .swiper-slide .reviews-card p {
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+  margin: 0px;
+}
+
+.tabbed-content-section .tab-product .details-wrapper .details-wrapper-content p {
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+}
+
+.iwt-about .page-width .image-with-text__text-item.grid__item .image-with-text__content .image-with-text__text.rte p {
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+}
+
+.video-with-text-section .text-wrapper .content.rte p {
+  color: #1E1E1E;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 27.5px */
+}
+
+/* Font 18px */
+.shopify-section .contact.contact-v-two .input_field input,
+.shopify-section .contact.contact-v-two .input_field textarea {
+  height: 43px;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 22.5px */
+}
+
+footer .footer__content-bottom .copyright__content {
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 22.5px */
+}
+
+footer .footer__bottom-links a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 22.5px */
+}
+
+/* Font 17px */
+.tabbed-content-section .tabbed-content-wrapper .build-your-book .product-form .price-wrapper p {
+  color: #1E1E1E;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 20.4px */
+}
+
+.contact-one .page-width .contact__button .button {
+  color: #FFF;
+  text-align: center;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2.5px;
+  padding: 15px 30px;
+}
+
+@media screen and (max-width: 1800px) {
+  /* Font 18px */
+  .list-menu a.header__menu-item,
+  .ib-one .banner__buttons a.button,
+  .announcement-one .announcement-bar__message,
+  .tabbed-content-section .tabbed-content-wrapper .build-your-book .detail-wrapper p,
+  .tabbed-content-section .tabbed-content-wrapper .build-your-book .product-form p,
+  .tabbed-content-section .variant-picker-wrapper .tabbed_content-variant_select .product-form__input .select select,
+  .tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper .steps-wrapper .step .step-content,
+  .tabbed-content-section .pre-made-books .products-grid-wrapper .details-wrapper p,
+  .tabbed-content-section .faq .faq-grid .faq-wrapper p,
+  .static-reviews-section .swiper-slide .reviews-card p,
+  .static-reviews-section .swiper-slide .reviews-card .profile-name-img-wrapper p,
+  .static-instagram-section .header-wrapper a,
+  .shopify-section p.subtitle,
+  .shopify-section .contact.contact-v-two .input_field p,
+  .tabbed-content-section .tab-product .details-wrapper .details-wrapper-content p {
+    font-size: 18px;
+  }
+
+  /* Font 20px */
+  .tabbed-content-section .tabbed-button-wrapper button,
+  .iwt-one .page-width .image-with-text__content .image-with-text__text p,
+  .video-with-text-section .text-wrapper .content.rte p,
+  .page-width .image-with-text__text-item.grid__item .image-with-text__content .image-with-text__text.rte p,
+  .contact-one .page-width p.sub-title {
+    font-size: 20px !important;
+  }
+
+  /* Font 24px */
+  .tabbed-content-section .tabbed-content-wrapper .build-your-book .detail-wrapper h4,
+  .tabbed-content-section .tabbed-content-wrapper .build-your-book .product-form h4,
+  .tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper h4,
+  .tabbed-content-section .faq .faq-grid .faq-wrapper h5,
+  .tabbed-content-section .tab-product .details-wrapper .details-wrapper-title {
+    font-size: 24px;
+  }
+
+  /* Font 28px */
+  .tabbed-content-section .pre-made-books .products-grid-wrapper .details-wrapper h3 {
+    font-size: 28px;
+  }
+
+  /* Font 38px */
+  .iwt-one .page-width .image-with-text__content h2.image-with-text__heading,
+  .static-reviews-section .header-wrapper h2,
+  .static-instagram-section .header-wrapper h2,
+  .contact.contact-v-two h2.title,
+  .video-with-text-section .text-wrapper .title,
+  .iwt-about .page-width .image-with-text__text-item.grid__item .image-with-text__content .image-with-text__heading,
+  .contact-one .page-width h2.title {
+    font-size: 38px;
+  }
+
+  /* Font 62px */
+  .banner--desktop-transparent.ib-one .banner__box h2 p {
+    font-size: 62px;
+    line-height: unset;
+    margin-bottom: 40px;
+    letter-spacing: 0px;
+  }
+
+  .tabbed-content-section .product-form a.cta-btn,
+  .tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper .cta,
+  .iwt-one .page-width .button.button--primary,
+  .shopify-section .contact.contact-v-two #ContactForm .contact__button button,
+  .contact-one .page-width .contact__button .button,
+  .tabbed-content-section .tab-product .details-wrapper .details-button-wrapper .details-button {
+    font-size: 20px;
+    height: 47px;
+    margin-top: 20px;
+  }
+
+  .tabbed-content-section .pre-made-books .products-grid-wrapper .details-wrapper a {
+    padding: 10px 15px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  /* Font 18px */
+  .list-menu a.header__menu-item,
+  .ib-one .banner__buttons a.button,
+  .announcement-one .announcement-bar__message,
+  .tabbed-content-section .tabbed-content-wrapper .build-your-book .detail-wrapper p,
+  .tabbed-content-section .tabbed-content-wrapper .build-your-book .product-form p,
+  .tabbed-content-section .variant-picker-wrapper .tabbed_content-variant_select .product-form__input .select select,
+  .tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper .steps-wrapper .step .step-content,
+  .tabbed-content-section .pre-made-books .products-grid-wrapper .details-wrapper p,
+  .tabbed-content-section .faq .faq-grid .faq-wrapper p,
+  .static-reviews-section .swiper-slide .reviews-card p,
+  .static-reviews-section .swiper-slide .reviews-card .profile-name-img-wrapper p,
+  .static-instagram-section .header-wrapper a,
+  .shopify-section p.subtitle,
+  .shopify-section .contact.contact-v-two .input_field p,
+  .tabbed-content-section .tabbed-button-wrapper button,
+  .iwt-one .page-width .image-with-text__content .image-with-text__text p,
+  .tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper .steps-wrapper .step .step-title,
+  footer .footer__bottom-links a,
+  footer .footer__content-bottom .copyright__content,
+  .video-with-text-section .text-wrapper .content.rte p,
+  .page-width .image-with-text__text-item.grid__item .image-with-text__content .image-with-text__text.rte p,
+  .contact-one .page-width p.sub-title,
+  .tabbed-content-section .tab-product .details-wrapper .details-wrapper-content p {
+    font-size: 16px !important;
+  }
+
+  /* Font 20px */
+  .tabbed-content-section .tabbed-content-wrapper .build-your-book .detail-wrapper h4,
+  .tabbed-content-section .tabbed-content-wrapper .build-your-book .product-form h4,
+  .tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper h4,
+  .tabbed-content-section .faq .faq-grid .faq-wrapper h5,
+  .tabbed-content-section .pre-made-books .products-grid-wrapper .details-wrapper h3,
+  .tabbed-content-section .tab-product .details-wrapper .details-wrapper-title {
+    font-size: 20px;
+  }
+
+  /* Font 24px */
+  
+  /* Font 32px */
+  .iwt-one .page-width .image-with-text__content h2.image-with-text__heading,
+  .static-reviews-section .header-wrapper h2,
+  .static-instagram-section .header-wrapper h2,
+  .contact.contact-v-two h2.title,
+  .video-with-text-section .text-wrapper .title,
+  .iwt-about .page-width .image-with-text__text-item.grid__item .image-with-text__content .image-with-text__heading,
+  .contact-one .page-width h2.title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  /* Font 42px */
+  .banner--desktop-transparent.ib-one .banner__box h2 p {
+    font-size: 42px;
+  }
+
+  .tabbed-content-section .product-form a.cta-btn,
+  .tabbed-content-section .tabbed-content-wrapper .how-it-works .text-wrapper .cta,
+  .iwt-one .page-width .button.button--primary,
+  .shopify-section .contact.contact-v-two #ContactForm .contact__button button,
+  .contact-one .page-width .contact__button .button,
+  .tabbed-content-section .tab-product .details-wrapper .details-button-wrapper .details-button {
+    font-size: 16px;
+    height: 47px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+
+  .tabbed-content-section .pre-made-books .products-grid-wrapper .details-wrapper a {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .banner--desktop-transparent.ib-one .banner__box h2 p {
+    font-size: 32px;
+    letter-spacing: 0;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* CART */
+.cart-page #MainContent {
+    margin: 0;
+}
+
+.cart-page .list-menu a.header__menu-item {
+    color: #000 !important;
+}
+
+.cart-page .header__icon.header__icon--cart {
+    color: #000 !important;
+}
+
+.cart-page sticky-header.header-wrapper--border-bottom {
+    border-bottom: 1px solid #000 !important;
+}
+
+
+/* Collection */
+.template-collection #MainContent,
+.template-product #MainContent{
+    margin: 0;
+}
+
+.template-collection .list-menu a.header__menu-item,
+.template-product .list-menu a.header__menu-item{
+    color: #000 !important;
+}
+
+.template-collection .header__icon.header__icon--cart,
+.template-product .header__icon.header__icon--cart{
+    color: #000 !important;
+}
+
+.template-collection sticky-header.header-wrapper--border-bottom,
+.template-product sticky-header.header-wrapper--border-bottom{
+    border-bottom: 1px solid #000 !important;
+}

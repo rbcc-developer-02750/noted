@@ -1,0 +1,562 @@
+{%- liquid
+  assign startDateArray = startDate | split: '-'
+  assign startDateYear = startDateArray[0]
+  assign startDateMonth = startDateArray[1]
+  assign startDateDay = startDateArray[2]
+  assign pageIndex = page | minus: 1
+-%}
+{%- if template == 'Y1' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_Y1 {
+        padding: 100px 30px 30px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_Y1 {
+        height: 100%;
+        padding: 70px 30px 30px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_Y1 .row-text-field {
+        height: 130px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 th,
+      .template-count-{{ templateCount }} .book-template_Y1 td {
+        border: 1px solid #d1d1d1;
+        padding: 8px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #6a6a6a;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 .cell-spacer,
+      .template-count-{{ templateCount }} .book-template_Y1 .cell-year,
+      .template-count-{{ templateCount }} .book-template_Y1 .row-year td {
+        border: none;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 td {
+        width: 33.3%
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 .row-year,
+      .template-count-{{ templateCount }} .book-template_Y1 .row-month {
+        height: 36px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 .row-month {
+        text-align: center;
+      }
+      .template-count-{{ templateCount }} .book-template_Y1 table:nth-child(2) {
+        margin-top: 100px;
+      }
+    {%- endstyle -%}
+    <div class="book-template book-template_Y1 is-portrait">
+      <table>
+        <tr class="row-year">
+          <td colspan="3">
+            {{- startDateYear | plus: pageIndex -}}
+          </td>  
+        </tr>
+        <tr class="row-month">
+          <td>January</td>
+          <td>February</td>
+          <td>March</td>
+        </tr>
+        <tr class="row-text-field">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="row-month">
+          <td>April</td>
+          <td>May</td>
+          <td>June</td>
+        </tr>
+        <tr class="row-text-field">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    <div class="book-template book-template_Y1 is-portrait">
+      <table>
+        <tr class="row-year">
+          <td colspan="3">
+            {{- startDateYear | plus: pageIndex -}}
+          </td>
+        </tr>
+        <tr class="row-month">
+          <td>July</td>
+          <td>August</td>
+          <td>September</td>
+        </tr>
+        <tr class="row-text-field">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr class="row-month">
+          <td>October</td>
+          <td>November</td>
+          <td>December</td>
+        </tr>
+        <tr class="row-text-field">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+{%- elsif template == 'Y2' or template == 'Y3' or template == 'Y4' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_Y2 {
+        padding: 100px 30px 30px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_Y2 {
+        padding: 60px 30px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .table-wrapper {
+        border: 1px solid #d1d1d1;
+        padding: 10px 20px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-year td {
+        border-bottom: 1px solid #d1d1d1;
+        font-size: 16px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 th,
+      .template-count-{{ templateCount }} .book-template_Y3 td {
+        padding: 8px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #6a6a6a;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month td {
+        width: 50%;
+        text-align: left;
+        vertical-align: baseline;
+        padding: 20px 0;
+        height: 100px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_Y2 .row-month td {
+        height: 60px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month td div {
+        width: 100%;
+        height: 100%;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month td:first-child div {
+        border-right: 1px solid #d1d1d1;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .cell-spacer,
+      .template-count-{{ templateCount }} .book-template_Y2 .cell-year {
+        border: none;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 td {
+        width: 50%;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #6a6a6a;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-year {
+        height: 36px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month {
+        text-align: center;
+        border-bottom: 1px solid #d1d1d1;
+        display: flex;
+        width: 100%;
+        gap: 20px;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 .row-month:last-child {
+        border-bottom: none;
+      }
+      .template-count-{{ templateCount }} .book-template_Y2 table:nth-child(2) {
+        margin-top: 100px;
+      }
+    {%- endstyle -%}
+    <div class="book-template book-template_Y2 is-portrait">
+      <div class="table-wrapper">
+        <table>
+          <tr class="row-year">
+            <td colspan="3">
+              {{- startDateYear | plus: pageIndex -}}
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>January</div>
+            </td>
+            <td>
+              <div>February</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>March</div>
+            </td>
+            <td>
+              <div>April</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>May</div>
+            </td>
+            <td>
+              <div>June</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>July</div>
+            </td>
+            <td>
+              <div>August</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>September</div>
+            </td>
+            <td>
+              <div>October</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>November</div>
+            </td>
+            <td>
+              <div>December</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    <div class="book-template book-template_Y2 is-portrait">
+      <div class="table-wrapper">
+        <table>
+          <tr class="row-year">
+            <td colspan="3">
+              {{- startDateYear | plus: pageIndex -}}
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>January</div>
+            </td>
+            <td>
+              <div>February</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>March</div>
+            </td>
+            <td>
+              <div>April</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>May</div>
+            </td>
+            <td>
+              <div>June</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>July</div>
+            </td>
+            <td>
+              <div>August</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>September</div>
+            </td>
+            <td>
+              <div>October</div>
+            </td>
+          </tr>
+          <tr class="row-month">
+            <td>
+              <div>November</div>
+            </td>
+            <td>
+              <div>December</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+{%- elsif template == 'M1' or template == 'M2' or template == 'M3' or template == 'M4' or template == 'M5' or template == 'Q1' or template == 'Q2' or template == 'Q3' or template == 'Q4' or template == 'Q5' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- liquid
+      assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: ","
+
+      assign current_month = startDateMonth | plus: pageIndex
+      assign current_month_index = startDateMonth | plus: pageIndex | minus: 1
+      assign year = startDateYear
+
+      assign year_offset = current_month | divided_by: 12
+      assign adjusted_month_index = current_month_index | modulo: 12
+      assign month_name = months[adjusted_month_index]
+
+      assign next_month = startDateMonth | plus: page
+      if next_month > 12
+        assign test = 'lol1'
+        assign year = year | plus: year_offset
+        assign next_month = next_month | modulo: 12
+        if next_month == 0
+          assign next_month = 12
+        endif
+      elsif next_month == 1
+        assign test = 'lol'
+        assign year = year | plus: year_offset | plus: 1
+      endif
+
+      assign date_string = year | append: "-" | append: next_month | append: "-01"
+      assign last_day = date_string | date: "%s" | minus: 86400 | date: "%d" | plus: 0
+    -%}
+
+    {%- style -%}
+      .template-count-{{ templateCount }} .book-template_M1 {
+        padding: 100px 30px 30px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_M1 {
+        padding: 30px 18px;
+      }
+      .template-count-{{ templateCount }} .book-template_M1 th,
+      .template-count-{{ templateCount }} .book-template_M1 td {
+        border: 1px solid #d1d1d1;
+        padding: 8px;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #6a6a6a;
+        vertical-align: top;
+      }
+      .template-count-{{ templateCount }} .book-template_M1 .cell-spacer,
+      .template-count-{{ templateCount }} .book-template_M1 .cell-year,
+      .template-count-{{ templateCount }} .book-template_M1 .row-year td {
+        border: none;
+      }
+
+      .template-count-{{ templateCount }} .book-template_M1 .row-year,
+      .template-count-{{ templateCount }} .book-template_M1 .row-month {
+        height: 36px;
+      }
+      .template-count-{{ templateCount }} .book-template_M1 .row-month {
+        text-align: center;
+      }
+      .template-count-{{ templateCount }} .book-template_M1.has-additional-row .row-day,
+      .template-count-{{ templateCount }} .book-template_M1 .row-day {
+        height: 120px;
+      }
+      .is-preview .template-count-{{ templateCount }} .book-template_M1.has-additional-row .row-day {
+        height: 70px;
+      }
+    {%- endstyle -%}
+    
+    <div class="book-template book-template_M1 is-portrait {% if last_day >= 31 %}has-additional-row{% endif %}">
+      <table>
+        <tr class="row-month">
+          <td colspan="3">
+            {{- month_name -}}
+          </td>
+        </tr>
+        <tr class="row-day">
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr class="row-day">
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+        </tr>
+        <tr class="row-day">
+          <td>13</td>
+          <td>14</td>
+          <td>15</td>
+        </tr>
+        <tr class="row-day">
+          <td>19</td>
+          <td>20</td>
+          <td>21</td>
+        </tr>
+        <tr class="row-day">
+          <td>25</td>
+          <td>26</td>
+          <td>27</td>
+        </tr>
+        {%- if last_day >= 31 -%}
+          <tr class="row-day">
+            <td>31</td>
+            <td></td>
+            <td></td>
+          </tr>
+        {%- endif-%}
+      </table>
+    </div>
+  </div>
+
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {%- liquid
+      assign months = "January,February,March,April,May,June,July,August,September,October,November,December" | split: ","
+
+      assign current_month = startDateMonth | plus: pageIndex
+      assign current_month_index = startDateMonth | plus: pageIndex | minus: 1
+      assign year = startDateYear
+
+      assign year_offset = current_month | divided_by: 12
+      assign adjusted_month_index = current_month_index | modulo: 12
+      assign month_name = months[adjusted_month_index]
+
+      assign next_month = startDateMonth | plus: page
+      if next_month > 12
+        assign test = 'lol1'
+        assign year = year | plus: year_offset
+        assign next_month = next_month | modulo: 12
+        if next_month == 0
+          assign next_month = 12
+        endif
+      elsif next_month == 1
+        assign test = 'lol'
+        assign year = year | plus: year_offset | plus: 1
+      endif
+
+      assign date_string = year | append: "-" | append: next_month | append: "-01"
+      assign last_day = date_string | date: "%s" | minus: 86400 | date: "%d" | plus: 0
+    -%}
+    
+    <div class="book-template book-template_M1 is-portrait {% if last_day >= 31 %}has-additional-row{% endif %}">
+      <table>
+        <tr class="row-month">
+          <td colspan="3">
+            {{- month_name -}}
+          </td>
+        </tr>
+        <tr class="row-day">
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr class="row-day">
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+        </tr>
+        <tr class="row-day">
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+        </tr>
+        <tr class="row-day">
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+        </tr>
+        <tr class="row-day">
+          <td>{%- if last_day >= 28-%}28{%- endif-%}</td>
+          <td>{%- if last_day >= 29-%}29{%- endif-%}</td>
+          <td>{%- if last_day >= 30-%}30{%- endif-%}</td>
+        </tr>
+        {%- if last_day >= 31 -%}
+          <tr class="row-day">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        {%- endif-%}
+      </table>
+    </div>
+  </div>
+{%- elsif template == 'W1' or template == 'W2' or template == 'W3' or template == 'W4' or template == 'W5' or template == 'W6' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {% liquid
+      assign current_product = all_products[handle]
+      assign calendar_data = current_product.metafields.custom.calendar_page_designs.value | default: '{}' 
+      assign image_gid_list = calendar_data.weekly | reverse | reverse
+      assign index = template | remove: 'W' | minus: 1
+    %}
+  
+    {% if image_gid_list != blank and image_gid_list.size > index %}
+      {% assign target_image = image_gid_list[index].image %}
+      <div class="product-gallery">
+        <img src="{{ target_image }}">
+      </div>
+    {% endif %}
+  </div>
+
+{%- elsif template == 'D1' or template == 'D2' or template == 'D3' or template == 'D4' or template == 'D5' or template == 'D6' -%}
+    <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+      {% liquid
+        assign current_product = all_products[handle]
+        assign calendar_data = current_product.metafields.custom.calendar_page_designs.value | default: '{}' 
+        assign image_gid_list = calendar_data.daily | reverse | reverse
+        assign index = template | remove: 'D' | minus: 1
+      %}
+    
+      {% if image_gid_list != blank and image_gid_list.size > index %}
+        {% assign target_image = image_gid_list[index].image %}
+        <div class="product-gallery">
+          <img src="{{ target_image }}">
+        </div>
+      {% endif %}
+    </div>
+{%- elsif template == 'TDM' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {% liquid
+      assign current_product = all_products[handle]
+      assign image_gid_list = current_product.metafields.custom.in_between_to_do_meetings.value | reverse | reverse
+      assign index = type | minus: 1
+    %}
+  
+    {% if image_gid_list != blank and image_gid_list.size > index %}
+      {% assign target_image = image_gid_list[index] %}
+      <div class="product-gallery">
+        <img src="{{ target_image | img_url: '800x' }}" alt="{{ target_image.alt | escape }}">
+      </div>
+    {% endif %}
+  </div>
+
+{%- elsif template == 'WF' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {% liquid
+      assign current_product = all_products[handle]
+      assign image_gid_list = current_product.metafields.custom.in_between_wellness_family.value | reverse | reverse
+      assign index = type | minus: 1
+    %}
+
+    {% if image_gid_list != blank and image_gid_list.size > index %}
+      {% assign target_image = image_gid_list[index] %}
+      <div class="product-gallery">
+        <img src="{{ target_image | img_url: '800x' }}" alt="{{ target_image.alt | escape }}">
+      </div>
+    {% endif %}
+  </div>
+
+{%- elsif template == 'BG' -%}
+  <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+    {% liquid
+      assign current_product = all_products[handle]
+      assign image_gid_list = current_product.metafields.custom.in_between_basic_generic.value | reverse | reverse
+      assign index = type | minus: 1
+    %}
+
+    {% if image_gid_list != blank and image_gid_list.size > index %}
+      {% assign target_image = image_gid_list[index] %}
+      <div class="product-gallery">
+        <img src="{{ target_image | img_url: '800x' }}" alt="{{ target_image.alt | escape }}">
+      </div>
+    {% endif %}
+  </div>
+{%- endif -%}

@@ -1,0 +1,10 @@
+<div class="faq">
+  <div class="faq-grid">
+    {% for faq in shop.metaobjects.fa_qs.values %}
+      <div class="faq-wrapper">
+        <h5>{{ faq.question }}</h5>
+        <p>{{ faq.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>

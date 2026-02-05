@@ -1,0 +1,55 @@
+.banner--desktop-transparent.ib-one .banner__box {
+  max-width: 100%;
+}
+
+.banner--desktop-transparent.ib-one .banner__box h2 p {
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.ib-one .banner__buttons {
+  max-width: 100%;
+  gap: 28px;
+}
+
+.ib-one .banner__buttons .button:before,
+.ib-one .banner__buttons .button:after {
+  display: none;
+}
+
+.ib-one .banner__buttons .button {
+  border-radius: 5px;
+  border: 2px solid rgb(var(--color-button-text));
+  width: 236px;
+  height: 48px;
+  padding: 0px;
+  background: transparent;
+}
+
+.ib-one .banner__buttons .button {
+  transition: all 0.3s ease;
+}
+
+.ib-one .banner__buttons .button:hover {
+  color: #fff;
+  background: rgb(249, 233, 122);
+}
+
+@media screen and (max-width: 1800px) {
+  .ib-one .banner__buttons .button {
+    border: 2px solid rgb(var(--color-button-text));
+    width: 236px;
+    height: 48px;
+  }
+
+  .ib-one .banner__content {
+    padding-top: 190px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .ib-one .banner__buttons {
+    max-width: 100%;
+    gap: 10px;
+  }
+}

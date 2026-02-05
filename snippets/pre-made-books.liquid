@@ -1,0 +1,16 @@
+<div class="pre-made-books">
+  <div class="products-grid-wrapper">
+    {% for product in block.settings.collection.products limit: 6 %}
+      <div class="pre-made-product-card">
+        <div class="media-wrapper">
+          <img src="{{ product.featured_image | img_url: 'master' }}">
+        </div>
+        <div class="details-wrapper">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.metafields.custom.excerpt }}</p>
+          <a href="{{ product.url }}">View Now</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

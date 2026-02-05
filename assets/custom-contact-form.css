@@ -1,0 +1,85 @@
+.contact-one .page-width {
+  max-width: 905px;
+  padding-top: 144px;
+  padding-bottom: 118px;
+}
+
+.contact-one .page-width h2.title {
+  margin-bottom: 0px;
+}
+
+.contact-one .page-width .field {
+  flex-direction: column;
+}
+
+.contact-one .page-width .field:before,
+.contact-one .page-width .field:after {
+  display: none;
+}
+
+.contact-one .page-width .field .field_input {
+  padding: 0px;
+  border-bottom: solid 2px #000;
+  height: 43px;
+  Border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.contact-one .page-width .field .field_input::placeholder {
+  color: #757575;
+}
+
+.contact-one .page-width .field .field_input:focus-visible {
+  outline: none;
+  outline-offset: none;
+  box-shadow: none;
+}
+
+.contact-one form#ContactForm {
+  margin-top: 60px;
+  padding-left: 106px;
+  padding-right: 106px;
+}
+
+.contact-one .page-width .contact__button {
+  margin-top: 83px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-one .page-width .contact__button .button {
+  border-radius: 5px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.contact-one .page-width .contact__button .button:before,
+.contact-one .page-width .contact__button .button:after {
+  display: none;
+}
+
+.contact-one .page-width .contact__button .button:hover {
+  background: #F9E97A;
+}
+
+@media screen and (max-width: 1800px) {
+  .contact-one .page-width {
+    padding-top: 95px;
+    padding-bottom: 95px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .contact-one .page-width {
+    padding: 50px 40px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .contact-one form#ContactForm {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

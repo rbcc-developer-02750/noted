@@ -1,0 +1,56 @@
+<div class="static-instagram-section">
+  <div class="header-wrapper">
+    <h2>{{ section.settings.title }}</h2>
+    {% if section.settings.insta_link != blank %}
+      <a href="{{ section.settings.insta_link }}">VIEW OUR INSTAGRAM</a>
+    {% endif %}
+  </div>
+  <div class="feeds-wrapper">
+    {% for block in section.blocks %}
+      <div class="img-wrapper">
+        {% if block.settings.img != blank %}
+          <img src="{{ block.settings.img | img_url: 'master' }}">
+        {% else %}
+          <img src="https://cdn.shopify.com/s/files/1/0684/3138/0629/files/Group_90.png?v=1731330912">
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Static Instagram",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "url",
+      "id": "insta_link",
+      "label": "Instagram Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "intagram_image",
+      "name": "instagram Images",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Upload Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Static Instagram",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

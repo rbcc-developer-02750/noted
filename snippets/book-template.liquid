@@ -1,0 +1,35 @@
+{%- liquid
+  if cover
+    assign template_object = shop.metaobjects["notebook_covers"][template_handle]
+  else
+    assign template_object = shop.metaobjects["calendar_templates"][template_handle]
+  endif
+-%}
+
+{% if template_object %}
+  {% if cover and preview %}
+    {% assign preview_image = template_object.preview_image.value %}
+    <div class="template-count-{{ templateCount }} book-page {% if preview %}swiper-slide{% endif %}">
+      <img src="{{ preview_image | image_url: width: 800 }}" />
+    </div>
+  {% else %}
+    {% assign use_template_code = template_object.use_code_template.value %}
+
+    {% if use_template_code %}
+      {%- render 'template-dynamic-code',
+        template: template_object.system.handle,
+        startDate: startDate,
+        page: page,
+        preview: preview,
+        templateCount: templateCount
+      -%}
+    {% else %}
+      {% assign template_images = template_object.template_images.value %}
+      {% for preview_image in template_images %}
+        <div class="template-count-{{ templateCount }} book-page {% if preview %} swiper-slide {% endif %}">
+          <img src="{{ preview_image | image_url: width: 800 }}" />
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+{% endif %}

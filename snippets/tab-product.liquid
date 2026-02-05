@@ -1,0 +1,18 @@
+<div class="tab-product">
+  <div class="image-wrapper">
+    {% if block.settings.product_img != blank %}
+      <img src="{{ block.settings.product_img | img_url: 'master' }}">
+    {% endif %}
+  </div>
+  <div class="details-wrapper">
+    <h3 class="details-wrapper-title">{{ block.settings.title }}</h3>
+    <div class="details-wrapper-content rte">
+      {{ block.settings.content }}
+    </div>
+    {% if block.settings.link_label != blank and block.settings.link_url != blank %}
+      <div class="details-button-wrapper">
+        <a href="{{ block.settings.link_url }}" class="details-button">{{ block.settings.link_label }}</a>
+      </div>
+    {% endif %}
+  </div>
+</div>

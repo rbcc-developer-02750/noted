@@ -1,0 +1,25 @@
+<div class="build-your-book">
+  <div class="detail-wrapper show-in-large">
+    <h4 class="title">Details</h4>
+    <p class="description">{{ details }}</p>
+  </div>
+  <div class="image-wrapper">
+    <img src="{{ product.featured_media | img_url: 'master' }}">
+  </div>
+  <div class="product-form">
+    <h4><span class="type-label"></span> Notebook</h4>
+    <p>{{ product.description }}</p>
+    <div class="form-detail-wrapper hide-in-large">
+      <h4 class="title">Details</h4>
+      <p class="description">{{ details }}</p>
+    </div>
+    <div class="price-wrapper">
+      <p>STARTING AT</p>
+      <h4 class="price">{{ product.price_min | money }}</h4>
+    </div>
+    <div class="variant-picker-wrapper">
+      {% render 'product-variant-picker-two', product: product, block: block, product_form_id: form_id %}
+    </div>
+    <a class="cta-btn" href="{{ product.url }}"> BUILD YOUR BOOK </a>
+  </div>
+</div>

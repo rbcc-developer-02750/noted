@@ -1,0 +1,143 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_zqRhtD": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_pmA4cT": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>WHY WE DO<br/>WHAT WE DO</p>",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pmA4cT"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Group_101.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false,
+        "custom_class": "ib-one"
+      }
+    },
+    "announcement_bar_zccyzX": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_thhtEj": {
+          "type": "announcement",
+          "settings": {
+            "text": "BUILD YOUR OWN NOTEBOOK",
+            "link": "https://notednotebooks.com/products/build-your-book"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_thhtEj"
+      ],
+      "settings": {
+        "color_scheme": "scheme-7aae8f80-ecc3-489c-8383-5c7f64e954e3",
+        "show_line_separator": true,
+        "show_social": false,
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "custom_class": "announcement-one"
+      }
+    },
+    "video_with_text_cLFWDx": {
+      "type": "video-with-text",
+      "settings": {
+        "video": "shopify://files/videos/3945140-uhd_4096_2160_25fps.mp4",
+        "title": "We were just sick of buying notebooks that didn't work",
+        "details": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.<br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim </p>"
+      }
+    },
+    "image_with_text_xzQMQM": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_pUDFxc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Meet Piper. The marketing gal, turned notebook crafter.",
+            "heading_size": "h1"
+          }
+        },
+        "text_nQn6db": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id.<br/><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pUDFxc",
+        "text_nQn6db"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/8a38bb817149f7ad45589ee4fa09b36c_1.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_class": "iwt-about"
+      }
+    },
+    "contact_form_FjeQP3": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Have questions for our team?",
+        "sub_title": "Fill in the form below and our team will get in touch with you asap.",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "custom_class": "contact-one"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "image_banner_zqRhtD",
+    "announcement_bar_zccyzX",
+    "video_with_text_cLFWDx",
+    "image_with_text_xzQMQM",
+    "contact_form_FjeQP3",
+    "main"
+  ]
+}

@@ -1,0 +1,67 @@
+<div class="multibuttons-section">
+  <div class="multibuttons-section-wrapper">
+    {% for block in section.blocks %}
+      <a
+        href="{{ block.settings.link }}"
+        class="{{ block.settings.btn_type }} {% if block.settings.is_active %}active{% endif %}"
+      >
+        {{ block.settings.label }}
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Multiple Buttons",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Enter URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_active",
+          "label": "Button Active"
+        },
+        {
+          "type": "select",
+          "id": "btn_type",
+          "label": "Select Button Type",
+          "options": [
+            {
+              "label": "Button",
+              "value": "button"
+            },
+            {
+              "label": "Outline",
+              "value": "outline"
+            },
+            {
+              "label": "Default",
+              "value": "default"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multiple Buttons",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

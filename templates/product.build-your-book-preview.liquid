@@ -1,0 +1,226 @@
+
+{%- comment -%} Capture the content for header containing the tracking data {%- endcomment -%}
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+
+  {% liquid
+    # Use string splitting to pull the value from content_for_header and apply some string clean up
+    assign pageUrl = contentForQuerystring | split:'"pageurl":"' | last | split:'"' | first | split:'.myshopify.com' | last | replace:'\/','/' | replace:'%20',' ' | replace:'\u0026','&'
+  %}
+{% layout none %}
+{% if pageUrl contains '&preview=true' %}
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+          crossorigin="anonymous"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+{% endif %}
+<style>
+  .is-preview table,
+  .is-preview img {
+    break-before: right;
+    width: 100%;
+    height: auto;
+  }
+  .book-templates:not(.is-preview) .book-page {
+    /* Optional: make each div the size of an A4 page */
+    width: 175mm;
+    height: 200mm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    break-before: right;
+  }
+  .book-templates:not(.is-preview) .book-page img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
+  body {
+    margin: 0;
+  }
+  .book-templates__container {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    text-transform: uppercase;
+  }
+  .book-templates:not(.is-preview) .book-templates__container {
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  .book-templates:not(.is-preview) .table-wrapper {
+    width: 100%;
+  }
+  .is-preview.book-templates {
+    padding: 120px;
+    background: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .is-preview .book-templates__wrapper {
+    overflow: hidden;
+    width: 900px;
+  }
+  h1 {
+    text-transform: none;
+  }
+  h1:not(:first-child) {
+    margin-top: 100px;
+  }
+  .book-template {
+    position: relative;
+  }
+  .is-preview .book-templates__container.book-template,
+  .is-preview .book-templates__container .book-page {
+    background: white;
+  }
+
+  .book-page .book-template {
+    pointer-events: none;
+  }
+
+  .book-templates:not(.is-preview) .book-template {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book-template.is-landscape table {
+    max-height: 650px;
+  }
+  .book-template.is-portrait table {
+    max-height: 850px;
+  }
+  
+  .is-preview .book-template.is-portrait table {
+    height: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+  }
+  hr {
+    margin: 100px 0;
+    height: 5px;
+    background: grey;
+    border: none;
+  }
+  .cell-spacer {
+    max-width: 60px;
+  }
+
+  .is-preview .book-page {
+    width: 100%;
+    min-height: 517px;
+    overflow: hidden;
+  }
+</style>
+<div class="book-templates {% if pageUrl contains '&preview=true' %}is-preview{% endif %}">
+  <div class="book-templates__wrapper {% if pageUrl contains '&preview=true' %}swiper-container{% endif %}">
+    {% if pageUrl contains '&preview=true' %}
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    {% endif %}
+    <div class="book-templates__container {% if pageUrl contains '&preview=true' %}swiper-wrapper{% endif %}">
+      {% liquid
+        # If the string doesn't contain a ? then we have no querystring. Go no further
+        unless pageUrl contains "?"
+          break
+        endunless
+
+        # Split the url at the ? to get all values after it
+        assign pageQuerystring = pageUrl | split: '?' | last
+
+        # Split the remaining string at & to get the list of keys and values (if any)
+        assign parts = pageQuerystring | split: '&'
+        assign preview = false
+        assign templateCount = 1
+
+        for part in parts
+          # Split the part at the =. Not all querystrings will be in pairs so we need to account for that
+          assign keyAndValue = part | split: '='
+
+          if keyAndValue[0] == 'cover'
+            assign cover = keyAndValue[1]
+          endif
+
+          if keyAndValue[0] == 'type'
+            assign type = keyAndValue[1] 
+          endif
+
+          if keyAndValue[0] == 'design'
+            assign design = keyAndValue[1] | upcase
+          endif
+
+          if keyAndValue[0] == 'start-date'
+            assign startDate = keyAndValue[1]
+          endif
+
+          if keyAndValue[0] == 'book-size'
+            assign bookSize = keyAndValue[1]
+          endif
+
+          if keyAndValue[0] == 'handle'
+            assign handle = keyAndValue[1]
+          endif
+
+          if keyAndValue[0] == 'preview' and keyAndValue[1] == 'true'
+            assign preview = true
+          endif
+        endfor
+
+        # Calculate number of pages based on book size
+        # Each page is double-sided, so total pages = book size
+        assign totalPages = bookSize | times: 1
+        
+        # Render the cover
+        render 'book-template', template_handle: cover, cover: true, preview: preview, templateCount: templateCount
+        
+        # Render calendar pages
+        # Monthly-1 and Monthly-2 produce two physical pages per month; Monthly-3 uses one page per month
+        if design contains 'monthly-'
+          assign monthsToRender = totalPages | divided_by: 2
+          if design == 'MONTHLY-3' or design == 'monthly-3'
+            assign monthsToRender = totalPages
+          endif
+          for i in (1..monthsToRender)
+            assign templateCount = templateCount | plus: 1
+            render 'book-template', template_handle: design, startDate: startDate, page: i, preview: preview, templateCount: templateCount
+          endfor
+        else
+          for i in (1..totalPages)
+            assign templateCount = templateCount | plus: 1
+            render 'book-template', template_handle: design, startDate: startDate, page: i, preview: preview, templateCount: templateCount
+          endfor
+        endif
+      %}
+    </div>
+  </div>
+</div>
+
+{% if pageUrl contains '&preview=true' %}
+  <script>
+    const mainSwiper = new Swiper('.book-templates__wrapper.swiper-container', {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      centeredSlides: false,
+      slidesPerGroup: 2,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop: true
+    });
+  </script>
+{% endif %}

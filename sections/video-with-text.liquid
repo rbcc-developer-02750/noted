@@ -1,0 +1,67 @@
+<div class="video-with-text-section">
+  <div class="video-wrapper">
+    {{
+      section.settings.video
+      | video_tag:
+        autoplay: false,
+        loop: true,
+        muted: false,
+        controls: false,
+        image_size: '600x',
+        poster: poster,
+        id: 'vitMedia'
+    }}
+    <div id="playVitButton">
+      <button onclick="playVitVideo()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="50" viewBox="0 0 44 50" fill="none">
+          <path d="M42 21.5359C44.6667 23.0755 44.6667 26.9245 42 28.4641L5.99999 49.2487C3.33333 50.7883 -2.44188e-06 48.8638 -2.30729e-06 45.7846L-4.9024e-07 4.21539C-3.55644e-07 1.13618 3.33333 -0.788313 6 0.751288L42 21.5359Z" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="text-wrapper">
+    <h3 class="title">{{ section.settings.title }}</h3>
+    <div class="content rte">
+      {{ section.settings.details }}
+    </div>
+  </div>
+</div>
+
+<script>
+  function playVitVideo() {
+    const video = document.querySelector('#vitMedia');
+    const play = document.querySelector('#playVitButton');
+
+    play.style.display = 'none';
+    video.play();
+  }
+</script>
+
+{% schema %}
+  {
+    "name": "Video With Text",
+    "settings": [
+      {
+        "type": "video",
+        "id": "video",
+        "label": "Upload Video"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "label": "Details",
+        "id": "details"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video With Text",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}
